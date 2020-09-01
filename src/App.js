@@ -1,10 +1,10 @@
 import React from "react";
+import AppRouter from "components/AppRouter/AppRouter";
 
 function App() {
   return (
     <div>
-      <h1> Hello</h1>
-      <button className="btn btn-outline-primary">Click</button>
+      <AppRouter />
     </div>
   );
 }

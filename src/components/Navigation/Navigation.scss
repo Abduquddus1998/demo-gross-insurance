@@ -1,0 +1,82 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+
+.navigation-outer {
+  width: 100%;
+  padding: 3rem 10% 0 10%;
+
+  @include media-breakpoint-down(md) {
+    padding: 0;
+  }
+
+  .inner-navigation {
+    display: flex;
+    justify-content: space-between;
+    height: 65px;
+    line-height: 2;
+    padding: .8rem 4rem .8rem 4rem;
+    box-shadow: -2px 3px 20px -7px rgba(115,111,115,0.74);
+    border: 1px solid #ffffff;
+
+    .logo-container {
+      width: 30%;
+
+     @media screen and (max-width: 1050px){
+        width: 20%;
+     }
+    }
+
+    .navigation-items {
+      display: flex;
+      justify-content: space-between;
+      width: 50%;
+      font-size: 20px;
+      font-weight: 600;
+
+      @media screen and (max-width: 1050px){
+        width: 65%;
+      }
+
+      @include media-breakpoint-down(sm){
+        display: none;
+      }
+    }
+
+    .navigation-icons {
+      display: flex;
+
+      .search-icon {
+        cursor: pointer;
+        padding: .3rem;
+
+        ion-icon {
+          width: 28px;
+          height: 28px;
+        }
+
+        &:hover {
+          background-color: #F3F2F2;
+          border-radius: 8px;
+
+          ion-icon {
+            color: #B5B7B9;
+          }
+        }
+      }
+
+      .navigation-toggler {
+        display: none;
+
+        @include media-breakpoint-down(sm){
+          display: flex;
+          padding-left: 2rem;
+        }
+      }
+    }
+
+  }
+
+
+}
