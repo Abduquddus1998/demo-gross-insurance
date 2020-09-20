@@ -1,6 +1,7 @@
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
+@import "~animate.css";
 
 
 .navigation-outer {
@@ -20,13 +21,37 @@
     box-shadow: -2px 3px 20px -7px rgba(115,111,115,0.74);
     border: 1px solid #ffffff;
 
-    .logo-container {
-      width: 30%;
-
-     @media screen and (max-width: 1050px){
-        width: 20%;
-     }
+    @include media-breakpoint-down(sm) {
+      padding: .8rem 2rem .8rem 2rem;
     }
+
+    .navigation-header {
+      display: flex;
+
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .logo-container {
+        width: 30%;
+        cursor: pointer;
+
+        @media screen and (max-width: 1050px){
+          width: 20%;
+        }
+      }
+
+      .navigation-toggler {
+        display: none;
+
+        @include media-breakpoint-down(sm) {
+          display: flex;
+        }
+      }
+    }
+
 
     .navigation-items {
       display: flex;
@@ -34,6 +59,10 @@
       width: 50%;
       font-size: 20px;
       font-weight: 600;
+
+      .nav-item {
+        cursor: pointer;
+      }
 
       @media screen and (max-width: 1050px){
         width: 65%;
@@ -72,11 +101,37 @@
         @include media-breakpoint-down(sm){
           display: flex;
           padding-left: 2rem;
+          padding-top: .1rem;
         }
       }
     }
+  }
+}
 
+
+.navigation-expanded {
+    width: 100%;
+    height: 100%;
+
+
+  .navigation-header {
+    display: flex;
+    justify-content: space-between;
+    padding: .8rem 2rem .8rem 1rem;
   }
 
+ .inner-navigation {
+   box-shadow: -2px 3px 20px -7px rgba(115,111,115,0.74);
 
+   .navigation-items {
+     padding-left: 1.5rem;
+     padding-bottom: 1rem;
+
+     .nav-item {
+       font-size: 20px;
+       font-weight: 500;
+       padding: 1rem;
+     }
+   }
+ }
 }

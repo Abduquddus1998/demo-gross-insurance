@@ -1,5 +1,13 @@
 import { createReducer } from "@reduxjs/toolkit";
 
-const initialState = {};
+import { toggleNavigation } from "store/actions/navigation";
 
-export default createReducer(initialState, {});
+const initialState = {
+  toggleNavigation: false,
+};
+
+export default createReducer(initialState, {
+  [toggleNavigation]: (state) => {
+    return { ...state, toggleNavigation: !state.toggleNavigation };
+  },
+});
