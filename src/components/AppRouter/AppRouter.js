@@ -1,23 +1,23 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Navigation from "components/Navigation/Navigation";
-import CafeList from "components/Cafes/CafeList";
-import RestaurantList from "components/Restaurants/RestaurantList";
 import Main from "components/Main/Main";
-import ChayxanaList from "../Chayxana/ChayxanaList";
-import Settings from "components/Settings/Settings";
+import About from "components/About/About";
+import ShareTrade from "components/ShareTrade/ShareTrade";
+import Footer from "components/Footer/Footer";
+
+import "./AppRouter.scss";
 
 const AppRouter = () => {
   return (
     <div>
       <Navigation />
-      <Switch>
-        <Route exact path="/" component={Main} />
-        <Route path="/cafes" component={CafeList} />
-        <Route path="/restaurants" component={RestaurantList} />
-        <Route path="/chayxana" component={ChayxanaList} />
-        <Route path="/settings" component={Settings} />
-      </Switch>
+      <div className="content-container">
+        <Switch>
+          <Route exact path="/" component={Main} />
+        </Switch>
+      </div>
+      <Footer />
     </div>
   );
 };

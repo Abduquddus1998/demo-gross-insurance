@@ -1,0 +1,184 @@
+
+@import "assets/style/variables";
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+
+  .carousel-container {
+    width: 100%;
+
+    .carousel-items {
+      & > img {
+        height: 900px;
+        width: 100%;
+      }
+    }
+  }
+
+  .pros-container {
+    display: flex;
+    background-color: $main-pros-backgroundColor;
+    padding: 3rem 6rem;
+
+    .pros-info {
+      display: flex;
+      flex-direction: column;
+      padding-right: 4rem;
+
+      .advantages {
+        display: flex;
+
+        & > span > ion-icon {
+          color: $success-icon-color;
+        }
+
+        h5 {
+          color: $white-text-color;
+          padding-left: 1rem;
+        }
+      }
+
+      .extra-info {
+        font-size: 18px;
+        color: $lightGray-text-color;
+      }
+    }
+  }
+
+  .content-and-ads {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+
+    .main-sections {
+      width: 66%;
+
+      .why-we {
+        margin-bottom: 3rem;
+
+        .section-header {
+          display: flex;
+          justify-content: center;
+        }
+
+        .content {
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          padding: 0 1rem;
+
+          .content-items {
+            display: flex;
+            justify-content: space-between;
+            width: 45%;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+            border: 1px solid $lightGray-text-color;
+            border-radius: 10px;
+            box-shadow:  0px -1px 10px 0px rgba(171,169,171,1);
+
+            .icon {
+              margin-top: 1.5rem;
+
+              & > svg {
+                fill: $main-icons-color;
+              }
+            }
+
+            .info {
+              padding-left: 1rem;
+            }
+          }
+        }
+      }
+
+      .get-started {
+        margin: 4rem 0;
+
+        .title {
+          display: flex;
+          justify-content: center;
+        }
+
+        .start-steps {
+          margin-top: 2rem;
+
+          .ant-steps-item-icon {
+            width: 50px;
+            height: 50px;
+            padding-top: .5rem;
+
+            & > span {
+              font-size: 30px;
+              font-weight: 600;
+            }
+          }
+
+          .ant-steps-item-content {
+            padding-top: .5rem;
+
+            & > div {
+              font-size: 20px;
+            }
+          }
+        }
+
+        .steps-descriptions {
+          display: flex;
+          justify-content: space-between;
+
+          & > div {
+            font-size: 17px;
+            width: 25%;
+          }
+
+          .description1 {
+            padding-left: 2.5rem;
+          }
+          .description2 {
+            padding-left: 3.5rem;
+          }
+          .description3 {
+            padding-left: 5.5rem;
+          }
+        }
+      }
+
+      .main-motivations {
+        margin-top: 4rem;
+
+        .title {
+          display: flex;
+          justify-content: center;
+        }
+
+        .motivations {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+
+          .motive-content {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2rem;
+
+            & > img {
+              width: 50%;
+              height: 180px;
+            }
+
+            & > div {
+              padding: 0 5rem;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

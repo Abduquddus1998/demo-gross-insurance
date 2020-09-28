@@ -1,0 +1,84 @@
+@import "assets/style/variables";
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 0;
+  background-color: $main-pros-backgroundColor;
+
+  .social-addresses {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+
+    & > h3,h5 {
+      color: $white-text-color;
+    }
+
+    .title {
+      display: flex;
+      justify-content: center;
+
+      & > h3 {
+        color: $white-text-color;
+      }
+    }
+
+    .phones-mails {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-left: 3rem;
+      padding-top: 1.5rem;
+
+      .phones {
+        font-size: 17px;
+        color: $white-text-color;
+      }
+
+      .mails {
+        font-size: 17px;
+        color: $white-text-color;
+      }
+    }
+
+    .social-networks {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+      padding: 0 3rem;
+
+      & > div > img {
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .map-container {
+    width: 30%;
+    color: $white-text-color;
+  }
+
+  .review-form {
+    width: 30%;
+    padding: 0 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > div >h4 {
+      color: $white-text-color;
+    }
+
+    .form-control {
+      margin-top: 1rem;
+    }
+
+    .btn-success {
+      width: 150px;
+      margin-top: 1rem;
+    }
+  }
+}

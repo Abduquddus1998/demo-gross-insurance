@@ -1,0 +1,49 @@
+@import "assets/style/variables";
+
+
+
+.users-slider {
+  margin-top: 2rem;
+  padding: 2rem 2rem;
+  background-color: $user-slider-bgColor;
+
+  .slider-title {
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-outer {
+    padding: 1rem 1rem;
+
+    .card-inner {
+      border: 1px solid $white-text-color;
+      background-color: $white-text-color;
+      border-radius: 10px;
+    }
+
+    .review-header {
+      display: flex;
+
+      .avatar {
+        padding: 1rem 1rem;
+
+        & > span > span > svg {
+          margin-bottom: 1rem;
+        }
+      }
+
+      .user-name {
+        padding-top: 2rem;
+
+      }
+    }
+
+    .review {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      padding-bottom: 2rem;
+      font-size: 16px;
+      font-style: italic;
+    }
+  }
+}

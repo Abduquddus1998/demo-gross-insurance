@@ -1,0 +1,11 @@
+
+
+.ads {
+  width: 17%;
+  padding: 0  1rem;
+  & > img {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 4rem;
+  }
+}

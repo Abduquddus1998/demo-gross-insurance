@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { navigationRouter, toggleNavigation } from "store/actions/navigation";
+import { navigationRouter } from "store/actions/navigation";
 
 import "./Navigation.scss";
 
@@ -8,10 +8,32 @@ const Navigation = () => {
   const dispatch = useDispatch();
   const expand = useSelector((state) => state.navigation.toggleNavigation);
 
+  const [scrollStyle, setScrollStyle] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 150;
+
+      if (isScrolled) {
+        setScrollStyle(isScrolled);
+      } else {
+        setScrollStyle(false);
+      }
+    };
+
+    document.addEventListener("scroll", handleScroll);
+
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  });
+
   return (
-    <div className={expand ? "navigation-expanded" : "navigation-outer"}>
+    <div
+      className={expand ? "navigation-expanded" : "navigation-outer"}
+      style={scrollStyle ? { padding: 0 } : {}}
+    >
       <div className="inner-navigation">
-        <div className="navigation-header">
+        <div className="navigation-items">
           <div
             onClick={() => dispatch(navigationRouter("/"))}
             className="logo-container"
@@ -19,42 +41,35 @@ const Navigation = () => {
             <h4>Logo</h4>
           </div>
           <div
-            className="navigation-toggler"
-            onClick={() => dispatch(toggleNavigation())}
-          >
-            <span>
-              {expand ? (
-                <ion-icon name="close-outline" size="large"></ion-icon>
-              ) : (
-                <ion-icon name="menu-outline" size="large"></ion-icon>
-              )}
-            </span>
-          </div>
-        </div>
-        <div className="navigation-items">
-          <div
             className="nav-item"
-            onClick={() => dispatch(navigationRouter("/restaurants"))}
+            onClick={() => dispatch(navigationRouter("/"))}
           >
-            Restaurant
+            Glavnaya
           </div>
           <div
             className="nav-item"
-            onClick={() => dispatch(navigationRouter("/cafes"))}
+            onClick={() => dispatch(navigationRouter("/about"))}
           >
-            Cafe
+            О Нас
           </div>
           <div
             className="nav-item"
-            onClick={() => dispatch(navigationRouter("/chayxana"))}
+            onClick={() => dispatch(navigationRouter("/shop"))}
           >
-            Chayxana
+            Targovlya
           </div>
           <div
             className="nav-item"
-            onClick={() => dispatch(navigationRouter("/settings"))}
+            onClick={() => dispatch(navigationRouter("/advertising"))}
           >
-            Settings
+            Obyevleniya
+          </div>
+          <div className="nav-item">Lang</div>
+          <div
+            className="nav-item"
+            onClick={() => dispatch(navigationRouter("/dashboard"))}
+          >
+            Login
           </div>
         </div>
       </div>
