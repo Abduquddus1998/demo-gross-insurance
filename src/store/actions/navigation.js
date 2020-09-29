@@ -6,3 +6,12 @@ export const navigationRouter = (path) => (dispatch) => {
 };
 
 export const toggleNavigation = createAction("toggle.navigation");
+
+export const changeNavPosition = createAction(
+  "change.nav.position",
+  (status) => {
+    return {
+      payload: status,
+    };
+  }
+);

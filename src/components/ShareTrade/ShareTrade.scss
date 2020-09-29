@@ -1,0 +1,73 @@
+@import "assets/style/variables";
+
+.trade-container {
+  padding-top: 10rem;
+  margin-bottom: 4rem;
+
+  .trade-title {
+    display: flex;
+    justify-content: center;
+  }
+
+  .shares-block {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 2rem 3rem;
+
+    .share {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #F2F2F3;
+      background-color: #EBEBEC;
+      border-radius: 10px;
+      margin-top: 3rem;
+      padding: 1rem 2rem;
+
+      .share-price {
+        display: flex;
+        justify-content: center;
+
+        & > h3 {
+          color: #FFD400;
+        }
+      }
+
+      .short-details {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .info {
+          padding: 0 .5rem;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .share-icon {
+          padding-left: 1rem;
+
+          & > svg {
+            fill: #E1C201;
+          }
+        }
+      }
+
+      .shares-button {
+        margin-top: 1rem;
+        color: $white-text-color;
+        display: flex;
+        justify-content: center;
+
+        & > button {
+          background-color: #0C9AEE;
+          border: 1px solid #0C9AEE;
+          width: 250px;
+          height: 35px;
+          border-radius: 10px;
+
+        }
+      }
+    }
+  }
+}
