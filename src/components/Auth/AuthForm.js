@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Slash } from "assets/icons/svg-icons";
+import LogoLight from "assets/images/gross-logo-light.png";
 
 import "./AuthForm.scss";
 
@@ -9,7 +10,8 @@ const AuthForm = () => {
     <div className="form-container">
       <form className="auth-form">
         <div className="form-title">
-          <h3>Some title</h3>
+          <img src={LogoLight} alt="company-logo" />
+          <div>Authorization</div>
         </div>
         <input type="mail" />
         <input type="password" />

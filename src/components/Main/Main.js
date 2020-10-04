@@ -31,7 +31,7 @@ const Main = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getReviews()).then((res) => console.log(res));
+    dispatch(getReviews());
   });
 
   return (

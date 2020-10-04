@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { navigationRouter } from "store/actions/navigation";
 
+import Logo from "assets/images/gross-logo.png";
+
 import "./Navigation.scss";
 
 const Navigation = () => {
@@ -38,7 +40,7 @@ const Navigation = () => {
             onClick={() => dispatch(navigationRouter("/"))}
             className="logo-container"
           >
-            <h4>Logo</h4>
+            <img src={Logo} alt="company-logo" />
           </div>
           <div
             className="nav-item"

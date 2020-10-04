@@ -60,11 +60,12 @@
       .logo-container {
         width: 20%;
 
-        & > h4 {
-          color : $white-text-color;
+        & > img {
+          width: 120px;
+          height: 45px;
           cursor: pointer;
-          width: 40%;
         }
+
         @media screen and (max-width: 1050px){
           width: 20%;
         }
