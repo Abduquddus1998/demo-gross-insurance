@@ -32,7 +32,7 @@ const Navigation = () => {
       className={expand ? "navigation-expanded" : "navigation-outer"}
       style={scrollStyle ? { padding: 0 } : {}}
     >
-      <div className="inner-navigation">
+      <nav className="inner-navigation">
         <div className="navigation-items">
           <div
             onClick={() => dispatch(navigationRouter("/"))}
@@ -54,25 +54,34 @@ const Navigation = () => {
           </div>
           <div
             className="nav-item"
+            onClick={() => dispatch(navigationRouter("/advertising"))}
+          >
+            Obyevleniya
+          </div>
+          <div
+            className="nav-item"
             onClick={() => dispatch(navigationRouter("/shop"))}
           >
             Targovlya
           </div>
           <div
             className="nav-item"
-            onClick={() => dispatch(navigationRouter("/advertising"))}
+            onClick={() =>
+              dispatch(navigationRouter("/depository/currentshares"))
+            }
           >
-            Obyevleniya
+            Depository
           </div>
+
           <div className="nav-item">Lang</div>
           <div
             className="nav-item"
-            onClick={() => dispatch(navigationRouter("/dashboard"))}
+            onClick={() => dispatch(navigationRouter("/auth"))}
           >
             Login
           </div>
         </div>
-      </div>
+      </nav>
     </div>
   );
 };

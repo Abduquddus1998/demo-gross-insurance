@@ -9,6 +9,7 @@
   width: 100%;
   padding: 3rem 10% 0 10%;
   position: fixed;
+  z-index: 1;
   transition-duration: 1s;
   transition-timing-function: ease;
 
@@ -57,11 +58,12 @@
       font-weight: 600;
 
       .logo-container {
-        cursor: pointer;
         width: 20%;
 
         & > h4 {
-          color : $white-text-color
+          color : $white-text-color;
+          cursor: pointer;
+          width: 40%;
         }
         @media screen and (max-width: 1050px){
           width: 20%;

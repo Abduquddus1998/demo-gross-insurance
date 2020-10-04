@@ -1,63 +1,76 @@
-import React, { useState } from "react";
-import { Modal } from "antd";
+import React from "react";
+import { Modal, Button } from "antd";
+import { useDispatch, useSelector } from "react-redux";
 
-import { ShareCertificate } from "assets/icons/svg-icons";
+import Share from "./Share";
+import ModalContent from "./ModalContent";
+import TradeSteps from "./TradeSteps";
+import Footer from "../Footer/Footer";
+
+import { onShowModal } from "store/actions/shares";
+
 import "./ShareTrade.scss";
+import Navigation from "../Navigation/Navigation";
 
 const ShareTrade = () => {
-  const [showModal, setShowModal] = useState(false);
+  const showModal = useSelector((state) => state.shares.hideModal);
+  const dispatch = useDispatch();
 
-  const onTriggerModal = () => {
-    console.log("trigger");
-    setShowModal(true);
+  const bodyStyle = {
+    paddingTop: "2rem",
+    paddingLeft: "2rem",
+    paddingRight: "2rem",
   };
 
   const handleCancel = () => {
-    setShowModal(false);
+    dispatch(onShowModal());
   };
 
   const handleOk = () => {
-    setShowModal(false);
+    dispatch(onShowModal());
   };
 
   return (
     <div className="trade-container">
-      <div className="trade-title">
-        <h3>Trade Shop</h3>
-      </div>
-      <div className="shares-block">
-        <div className="share">
-          <div className="share-price">
-            <h3>120 000</h3>
-          </div>
-          <div className="short-details">
-            <div className="info">
-              <span>Lorem: ipsum dolor sit amet, consectetur</span>
-              <span>Lorem: ipsum dolor sit amet, consectetur</span>
-            </div>
-            <div className="share-icon">
-              <ShareCertificate width="50px" height="50px" />
-            </div>
-          </div>
-          <div className="shares-button">
-            <button type={"button"} onClick={onTriggerModal}>
-              Hello
-            </button>
-          </div>
+      <Navigation />
+
+      <div style={{ paddingTop: "10rem" }}>
+        <div className="trade-title">
+          <h3>Trade Shopping</h3>
+        </div>
+        <div className="shares-block">
+          <Share />
+          <Share />
+          <Share />
+          <Share />
+          <Share />
+          <Share />
+          <Share />
+          <Share />
         </div>
         <React.Fragment>
           <Modal
             visible={showModal}
-            title="Basic Modal"
+            title="Share number"
             onOk={handleOk}
             onCancel={handleCancel}
+            bodyStyle={bodyStyle}
+            width="450px"
+            footer={[
+              <Button onClick={handleOk} key="back" type="primary" danger>
+                Cancel
+              </Button>,
+              <Button key="submit" type="primary">
+                Dalee
+              </Button>,
+            ]}
           >
-            <p>Some contents...</p>
-            <p>Some contents...</p>
-            <p>Some contents...</p>
+            <ModalContent />
           </Modal>
         </React.Fragment>
       </div>
+      <TradeSteps />
+      <Footer />
     </div>
   );
 };

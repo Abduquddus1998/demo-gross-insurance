@@ -1,0 +1,49 @@
+@import "assets/style/variables";
+
+
+.dashboard-container {
+
+  .dashboard {
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+      display: flex;
+      justify-content: center;
+    }
+
+    .dashboard-route {
+      display: flex;
+      justify-content: space-between;
+      width: 60%;
+      padding: .5rem 4rem;
+      margin: 1.7rem 0 3rem 0;
+      border-bottom: 2px solid $dashboard-router-border-color;
+
+      .route-items {
+        padding: .3rem  .5rem;
+        border: 1px solid $dashboard-route-items-border-color;
+        font-size: 18px;
+        border-radius: 6px;
+        cursor: pointer;
+
+        &:hover {
+          border-color: $dashboard-route-items-hovered-color;
+          color: $dashboard-route-items-text-color;
+        }
+      }
+
+      .active-route {
+        padding: .3rem  .5rem;
+        border: 1px solid $dashboard-route-items-hovered-color;
+        background-color: $dashboard-route-items-hovered-color;
+        font-size: 18px;
+        border-radius: 6px;
+        cursor: pointer;
+        color: $white-text-color;
+      }
+    }
+  }
+}

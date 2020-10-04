@@ -5,7 +5,12 @@ import { rootReducer } from "reducers";
 
 export const history = createBrowserHistory();
 
-const middleware = [...getDefaultMiddleware(), routerMiddleware(history)];
+const middleware = [
+  ...getDefaultMiddleware({
+    serializableCheck: false,
+  }),
+  routerMiddleware(history),
+];
 
 const store = configureStore({
   reducer: rootReducer(history),

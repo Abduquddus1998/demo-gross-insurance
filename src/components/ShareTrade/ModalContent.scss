@@ -1,0 +1,22 @@
+@import "assets/style/variables";
+
+
+.modal-content {
+  padding-bottom: 2rem;
+
+  .share {
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  .full-info {
+    font-size: 20px;
+    padding: 0 3rem;
+
+    .content-items {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

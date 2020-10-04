@@ -4,7 +4,6 @@
 .main-container {
   display: flex;
   flex-direction: column;
-  margin-bottom: 3rem;
 
   .carousel-container {
     width: 100%;
@@ -50,7 +49,7 @@
   .content-and-ads {
     display: flex;
     justify-content: space-between;
-    margin-top: 3rem;
+    margin: 3rem 0;
 
     .main-sections {
       width: 66%;

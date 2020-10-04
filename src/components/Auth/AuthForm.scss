@@ -1,0 +1,83 @@
+@import "assets/style/variables";
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 6rem;
+
+
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 3rem;
+    margin: 2rem 0;
+    width: 25%;
+    border: 1px solid $auth-form-border-color;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 $auth-form-shadow-color;
+
+    .form-title {
+      display: flex;
+      justify-content: center;
+    }
+
+    & > input {
+      height: 35px;
+      margin-top: 1.5rem;
+      border-radius: 6px;
+      border: 1px solid $auth-input-border-color;
+    }
+
+    .auth-button {
+      height: 35px;
+      border-radius: 7px;
+      margin-top: 2.5rem;
+      background-color: $auth-button-bgColor;
+      border: 1px solid $auth-button-bgColor;
+      color: $white-text-color;
+      font-size: 20px;
+    }
+
+    .lost-pass {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+      padding: 0 1rem;
+      font-size: 16px;
+
+      & > div {
+        cursor: pointer;
+      }
+
+      & > span > ion-icon {
+        margin-right: 1rem;
+        margin-top: .5rem;
+      }
+
+      &:hover {
+        color: $lost-password-icon-hoveredColor;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .auth-options {
+    display: flex;
+    justify-content: space-between;
+    width: 12%;
+    margin-bottom: 2rem;
+
+    & > div > h4 {
+      cursor: pointer;
+      color: $auth-redirect-text-color;
+    }
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: space-between;
+  }
+}

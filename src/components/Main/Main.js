@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Steps } from "antd";
+import { useDispatch } from "react-redux";
+
 import MainCarousel from "./MainCarousel";
 import CardSlider from "./CardSlider";
 import LeftAds from "components/Ads/LeftAds";
 import RightAds from "components/Ads/RightAds";
+import Navigation from "components/Navigation/Navigation";
+import Footer from "components/Footer/Footer";
+
+import { getReviews } from "store/actions/main";
 
 import {
   Commission,
@@ -21,22 +27,17 @@ import "./Main.scss";
 
 const Main = () => {
   const { Step } = Steps;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getReviews()).then((res) => console.log(res));
+  });
 
   return (
     <div className="main-container">
+      <Navigation />
       <div className="carousel-container">
         <MainCarousel />
-      </div>
-      <div
-        style={{
-          color: "white",
-          backgroundColor: "inherit",
-          position: "absolute",
-        }}
-        className="reg-container"
-      >
-        <input type="text" />
-        <h1>Hello</h1>
       </div>
       <div className="pros-container">
         <div className="pros-info">
@@ -192,6 +193,7 @@ const Main = () => {
 
         <RightAds />
       </div>
+      <Footer />
     </div>
   );
 };
