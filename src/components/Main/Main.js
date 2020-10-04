@@ -8,6 +8,7 @@ import LeftAds from "components/Ads/LeftAds";
 import RightAds from "components/Ads/RightAds";
 import Navigation from "components/Navigation/Navigation";
 import Footer from "components/Footer/Footer";
+import MainForm from "components/Auth/MainForm";
 
 import { getReviews } from "store/actions/main";
 
@@ -36,6 +37,7 @@ const Main = () => {
   return (
     <div className="main-container">
       <Navigation />
+      <MainForm />
       <div className="carousel-container">
         <MainCarousel />
       </div>

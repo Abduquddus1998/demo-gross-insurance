@@ -1,0 +1,81 @@
+@import "assets/style/variables";
+
+
+.main-auth-form {
+  position: absolute;
+  z-index: 1;
+  margin-top: 10rem;
+  margin-left: 4rem;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  align-items: center;
+  border: 1px solid $main-auth-form-bgColor;
+  background-color: $main-auth-form-bgColor;
+  border-radius: 10px;
+
+  .main-form {
+    display: flex;
+    flex-direction: inherit;
+    align-items: center;
+    padding: 2rem 3rem;
+    color: $white-text-color;
+
+    .form-title > h3{
+      color: $white-text-color;
+    }
+
+    & > input {
+      height: 35px;
+      margin-top: 1.5rem;
+      border-radius: 6px;
+      border: 1px solid $main-auth-input-border-color;
+      width: 100%;
+      background-color: $main-auth-input-bgColor;
+    }
+
+    .main-auth-button {
+      height: 35px;
+      border-radius: 7px;
+      font-size: 18px;
+      margin-top: 2rem;
+      width: 70%;
+      background-color: $main-auth-button-bgColor;
+      border: 1px solid $main-auth-button-bgColor;
+
+      &:hover {
+        color: #384264;
+      }
+    }
+
+    .password-lost {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .main-auth-options {
+    display: flex;
+    margin-bottom: 1rem;
+
+    & > div > h4 {
+      cursor: pointer;
+      color: $white-text-color;
+    }
+
+    & > div > h4:hover {
+      color: $main-auth-form-redirect-text-color;
+      text-decoration: underline;
+    }
+  }
+
+  .social-links {
+    color: $white-text-color;
+  }
+}
