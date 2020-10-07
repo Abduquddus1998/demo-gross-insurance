@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+
+import { navigationRouter } from "store/actions/navigation";
 
 import { Slash } from "assets/icons/svg-icons";
 
@@ -10,6 +13,7 @@ import "./MainForm.scss";
 const MainForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
 
   const onChangeHandle = (setState) => (e) => setState(e.target.value);
 
@@ -40,13 +44,13 @@ const MainForm = () => {
         </div>
       </form>
       <div className="main-auth-options">
-        <div>
+        <div onClick={() => dispatch(navigationRouter("auth"))}>
           <h4>Login</h4>
         </div>
         <span>
           <Slash width="20px" height="30px" color="#fff" />
         </span>
-        <div>
+        <div onClick={() => dispatch(navigationRouter("register"))}>
           <h4>Register</h4>
         </div>
       </div>

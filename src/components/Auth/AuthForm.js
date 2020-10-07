@@ -4,6 +4,8 @@ import { Slash } from "assets/icons/svg-icons";
 import LogoLight from "assets/images/gross-logo-light.png";
 
 import "./AuthForm.scss";
+import AppStoreLogo from "../../assets/images/AppStore.png";
+import GooglePlayLogo from "../../assets/images/Googleplay.png";
 
 const AuthForm = () => {
   return (
@@ -22,21 +24,26 @@ const AuthForm = () => {
           </span>
           <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
         </div>
+        <div className="auth-options">
+          <div>
+            <h4>Login</h4>
+          </div>
+          <span>
+            <Slash width="20px" height="30px" color="#000" />
+          </span>
+          <div>
+            <h4>Register</h4>
+          </div>
+        </div>
       </form>
-      <div className="auth-options">
-        <div>
-          <h4>Login</h4>
-        </div>
-        <span>
-          <Slash width="20px" height="30px" color="#000" />
-        </span>
-        <div>
-          <h4>Register</h4>
-        </div>
-      </div>
+
       <div className="social-links">
-        <div>App store</div>
-        <div>Google Play</div>
+        <div>
+          <img src={AppStoreLogo} alt="app store logo" />
+        </div>
+        <div>
+          <img src={GooglePlayLogo} alt="google play logo" />
+        </div>
       </div>
     </div>
   );
