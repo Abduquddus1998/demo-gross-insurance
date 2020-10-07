@@ -28,6 +28,11 @@
         width: 160px;
         height: 35px;
       }
+
+      & > div {
+        margin-top: 1rem;
+        font-size: 18px;
+      }
     }
 
     & > input {

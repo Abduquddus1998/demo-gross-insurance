@@ -4,7 +4,7 @@
 .main-auth-form {
   position: absolute;
   z-index: 1;
-  margin-top: 10rem;
+  margin-top: 15rem;
   margin-left: 4rem;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,7 @@
   border: 1px solid $main-auth-form-bgColor;
   background-color: $main-auth-form-bgColor;
   border-radius: 10px;
+  padding-bottom: 2rem;
 
   .main-form {
     display: flex;
@@ -39,7 +40,7 @@
       border-radius: 7px;
       font-size: 18px;
       margin-top: 2rem;
-      width: 70%;
+      width: 100%;
       background-color: $main-auth-button-bgColor;
       border: 1px solid $main-auth-button-bgColor;
 
@@ -77,5 +78,14 @@
 
   .social-links {
     color: $white-text-color;
+    display: flex;
+    justify-content: center;
+
+    & > div > img {
+      width: 120px;
+      height: 35px;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
   }
 }

@@ -1,18 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Slash } from "assets/icons/svg-icons";
+
+import AppStoreLogo from "assets/images/AppStore.png";
+import GooglePlayLogo from "assets/images/Googleplay.png";
 
 import "./MainForm.scss";
 
 const MainForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const onChangeHandle = (setState) => (e) => setState(e.target.value);
+
   return (
     <div className="main-auth-form">
       <form className="main-form">
         <div className="form-title">
-          <h3>Some title</h3>
+          <h3>Authorization</h3>
         </div>
-        <input type="mail" />
-        <input type="password" />
+        <input
+          type="mail"
+          name="mail"
+          value={email}
+          onChange={onChangeHandle(setEmail)}
+        />
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={onChangeHandle(setPassword)}
+        />
         <button className="main-auth-button"> Login</button>
         <div className="password-lost">
           <span>
@@ -33,8 +51,12 @@ const MainForm = () => {
         </div>
       </div>
       <div className="social-links">
-        <div>App store</div>
-        <div>Google Play</div>
+        <div>
+          <img src={AppStoreLogo} alt="app store logo" />
+        </div>
+        <div>
+          <img src={GooglePlayLogo} alt="google play logo" />
+        </div>
       </div>
     </div>
   );

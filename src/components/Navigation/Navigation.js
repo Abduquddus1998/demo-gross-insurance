@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { navigationRouter } from "store/actions/navigation";
 
-import Logo from "assets/images/gross-logo.png";
+import Logo from "assets/images/gross-logo-light.png";
 
 import "./Navigation.scss";
 

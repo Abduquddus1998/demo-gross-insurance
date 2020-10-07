@@ -6,20 +6,18 @@ export class Base {
     baseURL: configs.baseUrl,
     headers: {
       "Content-Type": "application/json",
-      Accept: "application/json"
-    }
+      Accept: "application/json",
+    },
   });
 
   async getRequest(url) {
     const { data } = await this.instance.request({
       url: url,
-      method: "get"
+      method: "get",
     });
 
-    return {data: data.data, error: data.error, status: data.status}
-
+    return { data: data.data, error: data.error, status: data.status };
   }
-
 
   async postRequest(url, params) {
     const { data } = await this.instance.request({
@@ -28,7 +26,6 @@ export class Base {
       data: params,
     });
 
-    return {data: data.data, error: data.error, status: data.status};
-
+    return { data: data.data, error: data.error, status: data.status };
   }
 }
