@@ -33,6 +33,7 @@
       border: 1px solid $main-auth-input-border-color;
       width: 100%;
       background-color: $main-auth-input-bgColor;
+      padding-left: 1rem;
     }
 
     .main-auth-button {
@@ -51,9 +52,16 @@
 
     .password-lost {
       display: flex;
-      justify-content: space-between;
       margin-top: 1rem;
       cursor: pointer;
+
+      & > div {
+        margin-left: 1rem;
+      }
+
+      & > span {
+        margin-left: 1rem;
+      }
 
       &:hover {
         text-decoration: underline;

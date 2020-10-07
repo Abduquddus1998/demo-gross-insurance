@@ -1,15 +1,15 @@
 @import "assets/style/variables";
 
-.form-container {
+
+.register-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 100%;
-  padding-top: 4rem;
+  padding-top: 6rem;
 
-
-  .auth-form {
+  .registration-form {
     display: flex;
     flex-direction: column;
     padding: 2rem 3rem;
@@ -19,7 +19,7 @@
     border-radius: 10px;
     box-shadow: 0 0 10px 0 $auth-form-shadow-color;
 
-    .form-title {
+    .registration-title {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -43,7 +43,7 @@
       padding-left: 1rem;
     }
 
-    .auth-button {
+    .reg-button {
       height: 35px;
       border-radius: 7px;
       margin-top: 2.5rem;
@@ -53,38 +53,7 @@
       font-size: 20px;
     }
 
-    .lost-pass {
-      display: flex;
-      justify-content: space-between;
-      margin: 2rem 0;
-      padding: 0 1rem;
-      font-size: 16px;
 
-      & > div {
-        cursor: pointer;
-      }
-
-      & > span > ion-icon {
-        margin-right: 1rem;
-        margin-top: .5rem;
-      }
-
-      &:hover {
-        color: $lost-password-icon-hoveredColor;
-        text-decoration: underline;
-      }
-    }
-  }
-
-  .auth-options {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-
-    & > div > h4 {
-      cursor: pointer;
-      color: $auth-redirect-text-color;
-    }
   }
 
   .social-links {

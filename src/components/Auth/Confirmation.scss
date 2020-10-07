@@ -1,6 +1,7 @@
 @import "assets/style/variables";
 
-.form-container {
+
+.confirmation-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,8 +9,7 @@
   height: 100%;
   padding-top: 4rem;
 
-
-  .auth-form {
+  .confirm-form {
     display: flex;
     flex-direction: column;
     padding: 2rem 3rem;
@@ -19,7 +19,7 @@
     border-radius: 10px;
     box-shadow: 0 0 10px 0 $auth-form-shadow-color;
 
-    .form-title {
+    .confirm-title {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -43,7 +43,7 @@
       padding-left: 1rem;
     }
 
-    .auth-button {
+    .confirm-button {
       height: 35px;
       border-radius: 7px;
       margin-top: 2.5rem;
@@ -53,7 +53,7 @@
       font-size: 20px;
     }
 
-    .lost-pass {
+    .resend-password {
       display: flex;
       justify-content: space-between;
       margin: 2rem 0;
@@ -73,17 +73,6 @@
         color: $lost-password-icon-hoveredColor;
         text-decoration: underline;
       }
-    }
-  }
-
-  .auth-options {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-
-    & > div > h4 {
-      cursor: pointer;
-      color: $auth-redirect-text-color;
     }
   }
 

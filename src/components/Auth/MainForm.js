@@ -26,12 +26,14 @@ const MainForm = () => {
         <input
           type="mail"
           name="mail"
+          placeholder="Mail..."
           value={email}
           onChange={onChangeHandle(setEmail)}
         />
         <input
           type="password"
           name="password"
+          placeholder="Password..."
           value={password}
           onChange={onChangeHandle(setPassword)}
         />
@@ -40,17 +42,17 @@ const MainForm = () => {
           <span>
             <ion-icon name="checkbox-outline" size="large"></ion-icon>
           </span>
-          <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+          <div>Password lost dolor sit amet, consectetur adipisicing elit.</div>
         </div>
       </form>
       <div className="main-auth-options">
-        <div onClick={() => dispatch(navigationRouter("auth"))}>
+        <div onClick={() => dispatch(navigationRouter("/auth"))}>
           <h4>Login</h4>
         </div>
         <span>
           <Slash width="20px" height="30px" color="#fff" />
         </span>
-        <div onClick={() => dispatch(navigationRouter("register"))}>
+        <div onClick={() => dispatch(navigationRouter("/register"))}>
           <h4>Register</h4>
         </div>
       </div>
