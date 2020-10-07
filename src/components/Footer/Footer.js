@@ -96,7 +96,7 @@ const Footer = () => {
           onChange={onInputChange(setReview)}
           value={review}
         />
-        <button type="button" className="btn btn-success" onClick={sendReview}>
+        <button type="button" className="review-button" onClick={sendReview}>
           Send
         </button>
       </div>

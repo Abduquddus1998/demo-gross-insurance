@@ -74,11 +74,21 @@
 
     .form-control {
       margin-top: 1rem;
+      border-radius: 6px;
+      border: 1px solid $main-auth-input-border-color;
+      width: 100%;
+      background-color: $main-auth-input-bgColor;
     }
 
-    .btn-success {
-      width: 150px;
+    .review-button {
+      width: 180px;
       margin-top: 1rem;
+      height: 40px;
+      border-radius: 7px;
+      font-size: 18px;
+      background-color: $main-auth-button-bgColor;
+      border: 1px solid $main-auth-button-bgColor;
+      color: $white-text-color
     }
   }
 }
