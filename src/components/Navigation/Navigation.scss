@@ -25,7 +25,7 @@
     box-shadow:  0 4px 25px -5px rgba(0,0,0,0.75);
     border: 1px solid #040404;
     color: $white-text-color;
-    background-color: rgba(0,0,0,0.75);
+    background-color: $navigation-bgColor;
 
     @include media-breakpoint-down(sm) {
       padding: .8rem 2rem .8rem 2rem;
@@ -73,6 +73,14 @@
 
       .nav-item {
         cursor: pointer;
+
+        .lang-dropDown {
+          display: flex;
+          flex-direction: column;
+          margin-top: .7rem;
+          background-color: $navigation-bgColor;
+          padding: 0 1rem;
+        }
       }
 
       @media screen and (max-width: 1050px){

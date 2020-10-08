@@ -1,0 +1,175 @@
+@import "assets/style/variables";
+
+
+.about-container {
+
+  .about-content {
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+
+    .team-image {
+      display: flex;
+      position: relative;
+      align-items: center;
+
+      & > img {
+        width: 100%;
+        height: auto;
+        filter: brightness(.6);
+      }
+
+      .team-motto{
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        & > h1 {
+          color: $white-text-color
+        }
+      }
+    }
+
+    .team {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 5rem;
+      margin-top: 5rem;
+
+      .title {
+        text-align: center;
+      }
+
+      .about-team {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+        padding-top: 2rem;
+        font-size: 16px;
+
+        & > div {
+          width: 45%;
+
+          & > div {
+            margin-top: 1.5rem;
+          }
+        }
+      }
+    }
+
+    .our-offices {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .office-map {
+        margin-top: 2rem;
+        & > img {
+          width: 100%;
+          height: 750px;
+        }
+      }
+
+      .title {
+        display: flex;
+        justify-content: center;
+        margin-top: 4rem;
+        font-size: 40px;
+        font-weight: 400;
+      }
+    }
+
+    .team-members {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+
+      .member {
+        display: flex;
+        justify-content: space-between;
+        width: 38%;
+        margin-top: 3rem;
+
+        .member-details {
+          display: flex;
+
+          .picture {
+            & > img{
+              width: 240px;
+              height: 240px;
+              border-radius: 50%;
+            }
+          }
+
+          .member-info {
+            padding-left: 2rem;
+
+            & > h4 {
+              margin-top:1rem;
+            }
+          }
+        }
+
+        .social-networks {
+          display: flex;
+          justify-content: space-between;
+          margin: 1rem  0;
+          width: 40%;
+
+          & > div > img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .video-section {
+      display: flex;
+      justify-content: center;
+      margin-top: 4rem;
+
+      .team-video {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > img {
+          width: 100%;
+          filter: brightness(.7);
+          position: relative;
+          cursor: pointer;
+        }
+
+        .play-icon {
+          position: absolute;
+
+          ion-icon {
+            width: 60px;
+            height: 60px;
+            color: $white-text-color;
+          }
+        }
+      }
+
+      .video-desc {
+        background-color: #F6F6F0;
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & > div {
+          width: 80%;
+          font-size: 18px;
+          font-style: italic;
+        }
+      }
+    }
+  }
+}

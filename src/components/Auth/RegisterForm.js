@@ -20,6 +20,7 @@ const RegisterForm = () => {
           <div>Registration</div>
         </div>
         <input type="text" placeholder="Name..." name="mail" />
+        <input type="text" name="surname" placeholder="Surname..." />
         <input type="mail" name="email" placeholder="Mail..." />
         <button
           className="reg-button"

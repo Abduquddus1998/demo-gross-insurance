@@ -11,6 +11,8 @@ const Navigation = () => {
   const expand = useSelector((state) => state.navigation.toggleNavigation);
 
   const [scrollStyle, setScrollStyle] = useState(false);
+  const [toggleLang, setToggle] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 150;
@@ -34,7 +36,10 @@ const Navigation = () => {
       className={expand ? "navigation-expanded" : "navigation-outer"}
       style={scrollStyle ? { padding: 0 } : {}}
     >
-      <nav className="inner-navigation">
+      <nav
+        className="inner-navigation"
+        style={!scrollStyle ? { borderRadius: "15px" } : {}}
+      >
         <div className="navigation-items">
           <div
             onClick={() => dispatch(navigationRouter("/"))}
@@ -75,7 +80,20 @@ const Navigation = () => {
             Depository
           </div>
 
-          <div className="nav-item">Lang</div>
+          <div className="nav-item">
+            <div
+              style={{ padding: "0 1rem" }}
+              onClick={() => setToggle(!toggleLang)}
+            >
+              RU
+            </div>
+            {toggleLang && (
+              <div className="lang-dropDown">
+                <div onClick={() => setToggle(!toggleLang)}>UZB</div>
+                <div onClick={() => setToggle(!toggleLang)}>RU</div>
+              </div>
+            )}
+          </div>
           <div
             className="nav-item"
             onClick={() => dispatch(navigationRouter("/auth"))}
