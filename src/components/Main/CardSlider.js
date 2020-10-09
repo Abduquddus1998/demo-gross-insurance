@@ -1,10 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Avatar, Carousel } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 
 import "./CardSlider.scss";
 
 const CardSlider = () => {
+  const reviews = useSelector((state) => state.main.reviews);
+
   const cardCarouselSetting = {
     dots: true,
     infinite: true,
@@ -28,79 +31,21 @@ const CardSlider = () => {
         autoplay
         autoplaySpeed={3000}
       >
-        <div className="card-outer">
-          <div className="card-inner">
-            <div className="review-header">
-              <div className="avatar">
-                <Avatar size={64} icon={<UserOutlined />} />
+        {reviews.map((review) => (
+          <div key={review.review_id} className="card-outer">
+            <div className="card-inner">
+              <div className="review-header">
+                <div className="avatar">
+                  <Avatar size={64} icon={<UserOutlined />} />
+                </div>
+                <div className="user-name">
+                  <h4>{review.reviewer_nickname}</h4>
+                </div>
               </div>
-              <div className="user-name">
-                <h4>John Doe1</h4>
-              </div>
-            </div>
-            <div className="review">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              aliquam dolore eos est harum, hic minus non numquam omnis ratione
-              sapiente sunt tempora tenetur unde veniam? Magnam numquam soluta
-              suscipit.
+              <div className="review">{review.reviewer_comment}</div>
             </div>
           </div>
-        </div>
-
-        <div className="card-outer">
-          <div className="card-inner">
-            <div className="review-header">
-              <div className="avatar">
-                <Avatar size={64} icon={<UserOutlined />} />
-              </div>
-              <div className="user-name">
-                <h4>John Doe2</h4>
-              </div>
-            </div>
-            <div className="review">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              aliquam dolore eos est harum, hic minus non numquam omnis ratione
-              sapiente sunt tempora tenetur unde veniam? Magnam numquam soluta
-              suscipit.
-            </div>
-          </div>
-        </div>
-        <div className="card-outer">
-          <div className="card-inner">
-            <div className="review-header">
-              <div className="avatar">
-                <Avatar size={64} icon={<UserOutlined />} />
-              </div>
-              <div className="user-name">
-                <h4>John Doe3</h4>
-              </div>
-            </div>
-            <div className="review">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              aliquam dolore eos est harum, hic minus non numquam omnis ratione
-              sapiente sunt tempora tenetur unde veniam? Magnam numquam soluta
-              suscipit.
-            </div>
-          </div>
-        </div>
-        <div className="card-outer">
-          <div className="card-inner">
-            <div className="review-header">
-              <div className="avatar">
-                <Avatar size={64} icon={<UserOutlined />} />
-              </div>
-              <div className="user-name">
-                <h4>John Doe</h4>
-              </div>
-            </div>
-            <div className="review">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              aliquam dolore eos est harum, hic minus non numquam omnis ratione
-              sapiente sunt tempora tenetur unde veniam? Magnam numquam soluta
-              suscipit.
-            </div>
-          </div>
-        </div>
+        ))}
       </Carousel>
     </div>
   );

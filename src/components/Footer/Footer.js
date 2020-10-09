@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import FooterMap from "components/Map/Map";
 
@@ -12,11 +12,11 @@ import FacebookIcon from "assets/images/fecebook-icon.png";
 import "./Footer.scss";
 
 const Footer = () => {
+  const dispatch = useDispatch();
+  const reviewLoading = useSelector((state) => state.main.reviewsLoading);
   const [nickName, setNickName] = useState("");
   const [email, setEmail] = useState("");
   const [review, setReview] = useState("");
-
-  const dispatch = useDispatch();
 
   const onInputChange = (setState) => (e) => setState(e.target.value);
 
@@ -97,7 +97,17 @@ const Footer = () => {
           value={review}
         />
         <button type="button" className="review-button" onClick={sendReview}>
-          Send
+          {reviewLoading ? (
+            <div
+              className="spinner-border text-light"
+              style={{ width: "25px", height: "25px" }}
+              role="status"
+            >
+              <span className="sr-only">Loading...</span>
+            </div>
+          ) : (
+            <div>Send</div>
+          )}
         </button>
       </div>
     </div>

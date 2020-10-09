@@ -23,6 +23,12 @@ import People from "assets/images/people.png";
 import Bank from "assets/images/bank.png";
 import MoneyBag from "assets/images/money-bag.jpg";
 import Clock from "assets/images/sand-timer_red.png";
+import Humo from "assets/images/humo.png";
+import Paynet from "assets/images/paynet.png";
+import Click from "assets/images/click.png";
+import Payme from "assets/images/payme.png";
+import Uzcard from "assets/images/uzxard.png";
+import Oson from "assets/images/oson.png";
 
 import "./Main.scss";
 
@@ -155,7 +161,6 @@ const Main = () => {
               </div>
             </div>
           </div>
-
           <div className="main-motivations">
             <div className="title">
               <h3>Motivations</h3>
@@ -192,8 +197,15 @@ const Main = () => {
             </div>
           </div>
         </div>
-
         <RightAds />
+      </div>
+      <div className="payment-systems">
+        <img src={Click} alt="click" />
+        <img src={Payme} alt="Payme" />
+        <img src={Paynet} alt="Paynet" />
+        <img src={Humo} alt="Humo" />
+        <img src={Uzcard} alt="Uzcard" />
+        <img src={Oson} alt="Oson" />
       </div>
       <Footer />
     </div>

@@ -43,17 +43,23 @@
       padding-left: 1rem;
     }
 
+    .reg-error {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+      font-size: 18px;
+      color: red;
+    }
+
     .reg-button {
-      height: 35px;
+      height: 40px;
       border-radius: 7px;
-      margin-top: 2.5rem;
+      margin-top: 2rem;
       background-color: $auth-button-bgColor;
       border: 1px solid $auth-button-bgColor;
       color: $white-text-color;
       font-size: 20px;
     }
-
-
   }
 
   .social-links {

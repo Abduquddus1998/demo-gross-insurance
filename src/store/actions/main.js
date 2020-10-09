@@ -9,12 +9,12 @@ export const postReviews = createAsyncThunk(
 );
 
 export const postUserReview = (
-  reviewer_username,
+  reviewer_nickname,
   reviewer_mail,
   reviewer_comment
 ) => async (dispatch) => {
   return await dispatch(
-    postReviews({ reviewer_username, reviewer_mail, reviewer_comment })
+    postReviews({ reviewer_nickname, reviewer_mail, reviewer_comment })
   );
 };
 
