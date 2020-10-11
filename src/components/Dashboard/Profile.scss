@@ -1,0 +1,100 @@
+@import "assets/style/variables";
+
+
+
+.user-profile {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+
+  .user-photo {
+    display: flex;
+    flex-direction: column;
+
+    .photo {
+      & > img {
+        width: 200px;
+        height: 200px;
+        border-radius: 15px;
+      }
+    }
+
+    .account-details {
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: .5rem;
+
+      & > div {
+        margin-top: .3rem;
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+
+    .balance-button {
+      width: 100%;
+      height: 40px;
+      border-radius: 7px;
+      background-color: $auth-button-bgColor;
+      border: 1px solid $auth-button-bgColor;
+      color: $white-text-color;
+      font-size: 20px;
+    }
+  }
+
+  .user-info {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+
+    .person-details {
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+
+      & > input {
+        height: 35px;
+        margin-top: 1.8rem;
+        border-radius: 6px;
+        border: 1px solid $auth-input-border-color;
+        padding-left: 1rem;
+        width: 100%;
+      }
+
+      .save-button {
+        height: 40px;
+        border-radius: 7px;
+        margin-top: 2.5rem;
+        background-color: $auth-button-bgColor;
+        border: 1px solid $auth-button-bgColor;
+        color: $white-text-color;
+        font-size: 20px;
+      }
+    }
+
+    .pin-details {
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+
+      & > input {
+        height: 35px;
+        margin-top: 1.8rem;
+        border-radius: 6px;
+        width: 100%;
+        border: 1px solid $auth-input-border-color;
+        padding-left: 1rem;
+      }
+
+      .save-button {
+        height: 40px;
+        border-radius: 7px;
+        margin-top: 2.5rem;
+        background-color: $auth-button-bgColor;
+        border: 1px solid $auth-button-bgColor;
+        color: $white-text-color;
+        font-size: 20px;
+      }
+    }
+  }
+}

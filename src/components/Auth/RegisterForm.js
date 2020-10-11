@@ -12,8 +12,8 @@ import "./RegistrationForm.scss";
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
-  const regLoading = useSelector((state) => state.auth.registrationLoading);
-  const regError = useSelector((state) => state.auth.registrationError);
+  const regLoading = useSelector((state) => state.auth.authLoading);
+  const regError = useSelector((state) => state.auth.authError);
 
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -23,17 +23,13 @@ const RegisterForm = () => {
   const handleOnchange = (setState) => (e) => setState(e.target.value);
 
   const onRegister = async () => {
-    if (!name.length) {
-      return serError("Please fill all inputs");
-    } else if (!surname.length) {
-      return serError("Please fill all inputs");
-    } else if (!email.length) {
+    if (!name.length || !surname.length || !email.length) {
       return serError("Please fill all inputs");
     }
 
     await dispatch(userRegistration(name, surname, email)).then(
       ({ payload }) => {
-        payload.data && dispatch(navigationRouter("/confirm"));
+        payload && dispatch(navigationRouter("/confirm"));
       }
     );
   };

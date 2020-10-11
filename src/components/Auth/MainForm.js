@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useCallback, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import { navigationRouter } from "store/actions/navigation";
+import { login } from "store/actions/auth";
 
 import { Slash } from "assets/icons/svg-icons";
 
@@ -11,15 +12,29 @@ import GooglePlayLogo from "assets/images/Googleplay.png";
 import "./MainForm.scss";
 
 const MainForm = () => {
+  const dispatch = useDispatch();
+  const loginLoading = useSelector((state) => state.auth.authLoading);
+  const authError = useSelector((state) => state.auth.authError);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const dispatch = useDispatch();
+  const [inputErrors, setError] = useState("");
 
   const onChangeHandle = (setState) => (e) => setState(e.target.value);
 
+  const onLogin = useCallback(() => {
+    if (!email.length || !password.length) {
+      setError("Please fill all input fields");
+    }
+
+    dispatch(login(email, password)).then(({ payload }) => {
+      payload && dispatch(navigationRouter("/depository/currentshares"));
+    });
+  }, [email, password, dispatch]);
+
   return (
     <div className="main-auth-form">
-      <form className="main-form">
+      <div className="main-form">
         <div className="form-title">
           <h3>Authorization</h3>
         </div>
@@ -37,14 +52,28 @@ const MainForm = () => {
           value={password}
           onChange={onChangeHandle(setPassword)}
         />
-        <button className="main-auth-button"> Login</button>
+        {authError && <div className="reg-error">{authError}</div>}
+        {inputErrors && <div className="reg-error">{inputErrors}</div>}
+        <button className="main-auth-button" onClick={onLogin}>
+          {loginLoading ? (
+            <div
+              className="spinner-border text-light"
+              style={{ width: "25px", height: "25px" }}
+              role="status"
+            >
+              <span className="sr-only">Loading...</span>
+            </div>
+          ) : (
+            <div>Login</div>
+          )}{" "}
+        </button>
         <div className="password-lost">
           <span>
             <ion-icon name="checkbox-outline" size="large"></ion-icon>
           </span>
           <div>Password lost dolor sit amet, consectetur adipisicing elit.</div>
         </div>
-      </form>
+      </div>
       <div className="main-auth-options">
         <div onClick={() => dispatch(navigationRouter("/auth"))}>
           <h4>Login</h4>

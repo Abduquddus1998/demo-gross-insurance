@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { userConfirmation } from "store/actions/auth";
+import { navigationRouter } from "store/actions/navigation";
 
 import LogoLight from "assets/images/gross-logo-light.png";
 import AppStoreLogo from "assets/images/AppStore.png";
@@ -11,6 +12,9 @@ import "./Confirmation.scss";
 
 const Confirmation = () => {
   const dispatch = useDispatch();
+  const confirmLoading = useSelector((state) => state.auth.authLoading);
+  const confirmError = useSelector((state) => state.auth.authError);
+
   const [confirmationCode, setCode] = useState("");
   const [newPin, setNewPin] = useState("");
   const [confirmPin, setConfirm] = useState("");
@@ -18,14 +22,23 @@ const Confirmation = () => {
 
   const handleChange = (setState) => (e) => setState(e.target.value);
 
-  const handleConfirm = () => {
+  const handleConfirm = async () => {
     if (newPin !== confirmPin) {
       return setPinError("Pins are not equal");
-    } else if (!newPin.length && !confirmPin.length) {
+    } else if (!newPin.length || !confirmPin.length) {
       return setPinError("Please enter new pin");
     }
 
-    dispatch(userConfirmation(confirmationCode, confirmPin));
+    dispatch(userConfirmation(confirmationCode, confirmPin)).then(
+      ({ payload }) => {
+        console.log("payload", payload);
+        if (payload.data) {
+          dispatch(navigationRouter("/depository/currentshares"));
+        } else {
+          return;
+        }
+      }
+    );
   };
 
   return (
@@ -56,9 +69,20 @@ const Confirmation = () => {
           value={confirmPin}
           onChange={handleChange(setConfirm)}
         />
+        {confirmError && <div className="reg-error">{confirmError}</div>}
         {pinError && <div className="pin-error">{pinError}</div>}
         <button className="confirm-button" onClick={handleConfirm}>
-          Confirm
+          {confirmLoading ? (
+            <div
+              className="spinner-border text-light"
+              style={{ width: "25px", height: "25px" }}
+              role="status"
+            >
+              <span className="sr-only">Loading...</span>
+            </div>
+          ) : (
+            <div>Confirm</div>
+          )}
         </button>
         <div className="resend-password">
           <span>

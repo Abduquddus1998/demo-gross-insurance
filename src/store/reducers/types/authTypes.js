@@ -1,6 +1,7 @@
 // @flow
 
 export type Auth = {
-  registrationError: string,
-  registrationLoading: boolean,
+  authLoading: boolean,
+  authError: string,
+  currentShares: [],
 };

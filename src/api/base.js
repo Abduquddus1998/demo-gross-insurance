@@ -16,6 +16,10 @@ export class Base {
       method: "get",
     });
 
+    if (!data.data || data.error) {
+      throw data.error;
+    }
+
     return { data: data.data, error: data.error, status: data.status };
   }
 
@@ -25,6 +29,10 @@ export class Base {
       method: "post",
       data: params,
     });
+
+    if (!data.data || data.error) {
+      throw data.error;
+    }
 
     return { data: data.data, error: data.error, status: data.status };
   }

@@ -1,8 +1,9 @@
 @import "assets/style/variables";
 
 
-.modal-content {
+.modal-container {
   padding-bottom: 2rem;
+  margin-top: 2rem;
 
   .share {
     &:hover {
@@ -17,6 +18,22 @@
     .content-items {
       display: flex;
       justify-content: space-between;
+
+      .price-input {
+        width: 80px;
+        height: 35px;
+        border-radius: 6px;
+        border: 1px solid $auth-input-border-color;;
+      }
+
+      .price-button {
+        height: 35px;
+        border-radius: 7px;
+        background-color: $auth-button-bgColor;
+        border: 1px solid $auth-button-bgColor;
+        color: $white-text-color;
+        font-size: 20px;
+      }
     }
   }
 }

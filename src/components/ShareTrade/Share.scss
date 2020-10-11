@@ -9,6 +9,7 @@
   margin-top: 3rem;
   padding: 1rem 2rem;
   height: 200px;
+  min-width: 400px;
 
   &:hover {
     box-shadow: -1px 0px 16px 0px rgba(115,108,115,1);
@@ -23,12 +24,14 @@
   .short-details {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     .info {
-      padding-left: 1rem;
+      padding-left: 1.5rem;
       display: flex;
       flex-direction: column;
+      font-size: 18px;
+      font-weight: 400;
     }
 
     .share-icon {

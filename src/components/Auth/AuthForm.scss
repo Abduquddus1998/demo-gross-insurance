@@ -43,6 +43,14 @@
       padding-left: 1rem;
     }
 
+    .reg-error {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+      font-size: 18px;
+      color: red;
+    }
+
     .auth-button {
       height: 40px;
       border-radius: 7px;
