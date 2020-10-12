@@ -14,6 +14,14 @@ export class Dashboard extends Base {
   async sharesInBuy(url: string, params): Promise<any> {
     return this.postRequest(url, params);
   }
+
+  async updateProfile(url: string, params): Promise<any> {
+    return this.postRequest(url, params);
+  }
+
+  async updatePassword(url: string, params): Promise<any> {
+    return this.postRequest(url, params);
+  }
 }
 
 const dashboardApi: Dashboard = new Dashboard();

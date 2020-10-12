@@ -33,3 +33,47 @@ export const allSharesInBuy = createAsyncThunk(
 export const sharesInBuy = (customer_account_number) => async (dispatch) => {
   return await dispatch(allSharesInBuy({ customer_account_number }));
 };
+
+export const updateUserProfile = createAsyncThunk(
+  "update.user.profile",
+  async (profile) => {
+    return await dashboardApi.updateProfile("/update-info", profile);
+  }
+);
+
+export const updateProfile = (
+  customer_account_number,
+  customer_email,
+  customer_name,
+  customer_surname
+) => async (dispatch) => {
+  return await dispatch(
+    updateUserProfile({
+      customer_account_number,
+      customer_email,
+      customer_name,
+      customer_surname,
+    })
+  );
+};
+
+export const updateUserPassword = createAsyncThunk(
+  "update.user.password",
+  async (pins) => {
+    return await dashboardApi.updatePassword("/update-password", pins);
+  }
+);
+
+export const updatePasswords = (
+  customer_account_number,
+  customer_current_password,
+  customer_new_password
+) => async (dispatch) => {
+  return await dispatch(
+    updateUserPassword({
+      customer_account_number,
+      customer_current_password,
+      customer_new_password,
+    })
+  );
+};

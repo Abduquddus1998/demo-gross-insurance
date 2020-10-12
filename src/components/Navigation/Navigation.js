@@ -13,6 +13,8 @@ const Navigation = () => {
   const [scrollStyle, setScrollStyle] = useState(false);
   const [toggleLang, setToggle] = useState(false);
 
+  const accountNumber = localStorage.getItem("account_number");
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 150;
@@ -30,6 +32,14 @@ const Navigation = () => {
       document.removeEventListener("scroll", handleScroll);
     };
   });
+
+  const checkUserAuth = () => {
+    if (!accountNumber) {
+      return dispatch(navigationRouter("/auth"));
+    }
+
+    return dispatch(navigationRouter("/depository/currentshares"));
+  };
 
   return (
     <div
@@ -71,12 +81,7 @@ const Navigation = () => {
           >
             Targovlya
           </div>
-          <div
-            className="nav-item"
-            onClick={() =>
-              dispatch(navigationRouter("/depository/currentshares"))
-            }
-          >
+          <div className="nav-item" onClick={checkUserAuth}>
             Depository
           </div>
 
