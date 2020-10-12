@@ -1,6 +1,8 @@
 import React, { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import InstallApp from "../../InstallApp";
+
 import { navigationRouter } from "store/actions/navigation";
 import { login } from "store/actions/auth";
 
@@ -92,6 +94,9 @@ const MainForm = () => {
         <div>
           <img src={GooglePlayLogo} alt="google play logo" />
         </div>
+      </div>
+      <div className="app-install">
+        <InstallApp />
       </div>
     </div>
   );
