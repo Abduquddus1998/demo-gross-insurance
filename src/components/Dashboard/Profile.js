@@ -174,7 +174,7 @@ const Profile = () => {
             <Button onClick={handleOk} key="back" type="primary" danger>
               Cancel
             </Button>,
-            <Button onClick={updateUseBalance} key="submit" type="primary">
+            <Button onClick={handleOk} key="submit" type="primary">
               Transfer
             </Button>,
           ]}
