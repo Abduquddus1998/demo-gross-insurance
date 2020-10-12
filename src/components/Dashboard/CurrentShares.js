@@ -14,7 +14,6 @@ const CurrentShares = () => {
   const currentBonds = useSelector((state) => state.auth.currentShares);
   const accNumber = useSelector((state) => state.auth.accountNumber);
   const showModal = useSelector((state) => state.shares.hideModal);
-  const transType = useSelector((state) => state.shares.transferType);
   const [shareDetails, setDetails] = useState("");
   const [sharePrice, setPrice] = useState("");
 
@@ -66,7 +65,7 @@ const CurrentShares = () => {
                 Cancel
               </Button>,
               <Button onClick={onShareSell} key="submit" type="primary">
-                {transType === 0 ? <div>Sell</div> : <div>Buy</div>}
+                Sell
               </Button>,
             ]}
           >

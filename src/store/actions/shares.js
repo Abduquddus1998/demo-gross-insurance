@@ -6,7 +6,11 @@ export const onShowModal = createAction("on.show.modal");
 export const getShareDetails = createAsyncThunk(
   "get.share.info",
   async (shareParams) => {
-    return await shareApi.getShareInfo("/my-bonds-info", shareParams);
+    const url = shareParams.customer_account_number
+      ? "/my-bonds-info"
+      : "/selling-bonds-info";
+
+    return await shareApi.getShareInfo(url, shareParams);
   }
 );
 
@@ -40,4 +44,43 @@ export const sellShareAction = (
       transfer_type,
     })
   );
+};
+
+export const getTradeShares = createAsyncThunk(
+  "get.all.trade.shares",
+  async () => {
+    return await shareApi.getAllTradeShares("/selling-bonds-dash");
+  }
+);
+
+export const buyShareFirstStepInfo = createAsyncThunk(
+  "get.first.step.info",
+  async (shareParams) => {
+    return await shareApi.shareBuyFirstStep(
+      "/make-transfer-first",
+      shareParams
+    );
+  }
+);
+
+export const shareBuyFirstStep = (bond_series, bond_number) => async (
+  dispatch
+) => {
+  return await dispatch(buyShareFirstStepInfo({ bond_series, bond_number }));
+};
+
+export const buyShareSecondStep = createAsyncThunk(
+  "get.second.step.info",
+  async (shareParams) => {
+    return await shareApi.shareBuySecondStep(
+      "/make-transfer-second",
+      shareParams
+    );
+  }
+);
+
+export const shareBuySecondStep = (customer_account_number) => async (
+  dispatch
+) => {
+  return await dispatch(buyShareSecondStep({ customer_account_number }));
 };

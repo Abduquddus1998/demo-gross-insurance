@@ -1,11 +1,22 @@
 import { createReducer } from "@reduxjs/toolkit";
 
-import { onShowModal, getShareDetails, shareSale } from "store/actions/shares";
+import {
+  onShowModal,
+  getShareDetails,
+  shareSale,
+  getTradeShares,
+  buyShareFirstStepInfo,
+  buyShareSecondStep,
+} from "store/actions/shares";
 
 const initialState = {
   hideModal: false,
   shareDetails: "",
   transferType: "",
+  tradeShares: [],
+  firstStepInfo: "",
+  secondStepInfo: "",
+  showNextStep: false,
 };
 
 export default createReducer(initialState, {
@@ -16,10 +27,25 @@ export default createReducer(initialState, {
     return {
       ...state,
       shareDetails: action.payload.data,
-      transferType: action.payload.data[0].transfer_type,
     };
   },
   [shareSale.fulfilled]: (state) => {
     return { ...state, hideModal: false };
+  },
+  [getTradeShares.fulfilled]: (state, action) => {
+    return {
+      ...state,
+      tradeShares: action.payload.data,
+    };
+  },
+  [buyShareFirstStepInfo.fulfilled]: (state, action) => {
+    return { ...state, firstStepInfo: action.payload.data };
+  },
+  [buyShareSecondStep.fulfilled]: (state, action) => {
+    return {
+      ...state,
+      secondStepInfo: action.payload.data,
+      showNextStep: true,
+    };
   },
 });

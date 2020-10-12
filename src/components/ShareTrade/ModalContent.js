@@ -12,7 +12,7 @@ type ModalContentType = {
 };
 
 const ModalContent = ({ onPrice }: ModalContentType) => {
-  const shareDetails = useSelector((state) => state.shares.shareDetails[0]);
+  const shareDetails = useSelector((state) => state.shares.shareDetails);
   const [price, setPrice] = useState("");
 
   const onPriceSelect = () => {
@@ -66,33 +66,42 @@ const ModalContent = ({ onPrice }: ModalContentType) => {
           <div>Date of Expiry:</div>
           <div>{shareDetails.bond_end_date}</div>
         </div>
-        {shareDetails.transfer_type === !0 && (
+        {shareDetails.transfer_type === 1 ? (
           <div className="content-items">
             <div>Seller Name:</div>
             <div>{shareDetails.seller_name}</div>
           </div>
+        ) : (
+          <>
+            <div className="content-items">
+              <div>Bought date:</div>
+              <div>{shareDetails.buy_date}</div>
+            </div>
+            <div className="content-items">
+              <div>Bought price:</div>
+              <div>{shareDetails.buy_price}</div>
+            </div>
+          </>
         )}
 
         <div className="content-items">
-          <div>Bought date:</div>
-          <div>{shareDetails.buy_date}</div>
-        </div>
-        <div className="content-items">
-          <div>Bought price:</div>
-          <div>{shareDetails.buy_price}</div>
-        </div>
-        <div className="content-items">
           <div>Sell price: </div>
-          <input
-            type="text"
-            name="price"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-            className="price-input"
-          />
-          <button className="price-button" onClick={onPriceSelect}>
-            Fixed
-          </button>
+          {shareDetails.transfer_type === 1 ? (
+            <div>{shareDetails.price}</div>
+          ) : (
+            <>
+              <input
+                type="text"
+                name="price"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+                className="price-input"
+              />
+              <button className="price-button" onClick={onPriceSelect}>
+                Accept
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>

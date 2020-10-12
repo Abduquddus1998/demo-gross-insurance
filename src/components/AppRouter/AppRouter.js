@@ -8,6 +8,7 @@ import Dashboard from "components/Dashboard/Dashboard";
 import AuthForm from "components/Auth/AuthForm";
 import RegisterForm from "components/Auth/RegisterForm";
 import Confirmation from "components/Auth/Confirmation";
+import TradeSteps from "components/ShareTrade/TradeSteps";
 
 import "./AppRouter.scss";
 
@@ -23,6 +24,7 @@ const AppRouter = () => {
         <Route path="/auth" component={AuthForm} />
         <Route path="/register" component={RegisterForm} />
         <Route path="/confirm" component={Confirmation} />
+        <Route path="/buy-share-steps" component={TradeSteps} />
       </Switch>
     </React.Fragment>
   );

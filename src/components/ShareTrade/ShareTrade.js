@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import { Modal, Button } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 
 import Share from "./Share";
 import ModalContent from "./ModalContent";
-import TradeSteps from "./TradeSteps";
-import Footer from "../Footer/Footer";
+import Footer from "components/Footer/Footer";
+import Navigation from "components/Navigation/Navigation";
 
-import { onShowModal } from "store/actions/shares";
+import {
+  onShowModal,
+  getTradeShares,
+  shareBuyFirstStep,
+} from "store/actions/shares";
 
 import "./ShareTrade.scss";
-import Navigation from "../Navigation/Navigation";
+import { navigationRouter } from "store/actions/navigation";
 
 const ShareTrade = () => {
-  const showModal = useSelector((state) => state.shares.hideModal);
   const dispatch = useDispatch();
+  const showModal = useSelector((state) => state.shares.hideModal);
+  const tradeShares = useSelector((state) => state.shares.tradeShares);
+  const shareDetails = useSelector((state) => state.shares.shareDetails);
 
   const bodyStyle = {
     paddingTop: "2rem",
@@ -30,6 +36,18 @@ const ShareTrade = () => {
     dispatch(onShowModal());
   };
 
+  useEffect(() => {
+    dispatch(getTradeShares());
+  }, [dispatch]);
+
+  const buyCurrentShare = useCallback(async () => {
+    await dispatch(
+      shareBuyFirstStep(shareDetails.bond_series, shareDetails.bond_number)
+    );
+
+    await dispatch(navigationRouter("/buy-share-steps"));
+  }, [shareDetails, dispatch]);
+
   return (
     <div className="trade-container">
       <Navigation />
@@ -39,19 +57,13 @@ const ShareTrade = () => {
           <h3>Trade Shopping</h3>
         </div>
         <div className="shares-block">
-          <Share />
-          <Share />
-          <Share />
-          <Share />
-          <Share />
-          <Share />
-          <Share />
-          <Share />
+          {tradeShares.map((share, index) => (
+            <Share key={index} bond={share} accNumber={null} />
+          ))}
         </div>
         <React.Fragment>
           <Modal
             visible={showModal}
-            title="Share number"
             onOk={handleOk}
             onCancel={handleCancel}
             bodyStyle={bodyStyle}
@@ -60,8 +72,8 @@ const ShareTrade = () => {
               <Button onClick={handleOk} key="back" type="primary" danger>
                 Cancel
               </Button>,
-              <Button key="submit" type="primary">
-                Dalee
+              <Button onClick={buyCurrentShare} key="submit" type="primary">
+                Buy
               </Button>,
             ]}
           >
@@ -69,7 +81,7 @@ const ShareTrade = () => {
           </Modal>
         </React.Fragment>
       </div>
-      <TradeSteps />
+
       <Footer />
     </div>
   );

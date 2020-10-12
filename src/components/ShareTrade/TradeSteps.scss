@@ -1,7 +1,65 @@
-
+@import "assets/style/variables";
 
 .steps-container {
-  .ant-steps  {
-    height: 500px;
+
+
+  .step-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 14rem;
+
+    .title {
+      font-weight: 500;
+      font-size: 30px;
+    }
+
+    .buy-steps {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-evenly;
+      width: 50%;
+
+      .ant-steps  {
+        height: 800px;
+        width: 50%;
+        margin-top: 2rem;
+      }
+
+      .share-params {
+        display: flex;
+        flex-direction: column;
+
+        .steps-details {
+          display: flex;
+          flex-direction: column;
+          width: 150%;
+          margin-top: 2rem;
+          transition-duration: 2s;
+
+          .steps {
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid $auth-form-border-color;
+            border-radius: 10px;
+            padding: 1rem;
+          }
+
+          .confirm-step {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 1rem;
+
+            .btn-success {
+              width: 100px;
+              height: 40px;
+              color: $white-text-color;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+
+    }
   }
 }
