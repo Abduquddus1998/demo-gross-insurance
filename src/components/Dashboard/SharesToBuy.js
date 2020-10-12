@@ -11,7 +11,7 @@ const SharesToBuy = () => {
   const dispatch = useDispatch();
   const buyShares = useSelector((state) => state.dashboard.sharesInBuy);
 
-  const accountNumber = localStorage.getItem("account_number");
+  const accountNumber = sessionStorage.getItem("account_number");
 
   useEffect(() => {
     dispatch(sharesInBuy(accountNumber));

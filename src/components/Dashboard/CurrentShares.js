@@ -20,7 +20,7 @@ const CurrentShares = () => {
   const [shareDetails, setDetails] = useState("");
   const [sharePrice, setPrice] = useState("");
 
-  const accNumber = localStorage.getItem("account_number");
+  const accNumber = sessionStorage.getItem("account_number");
 
   const bodyStyle = {
     paddingTop: "2rem",

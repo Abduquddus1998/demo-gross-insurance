@@ -77,3 +77,30 @@ export const updatePasswords = (
     })
   );
 };
+
+export const updateUserBalance = createAsyncThunk(
+  "update.user.balance",
+  async (accountParams) => {
+    return dashboardApi.balanceUpdate("/fill-balance", accountParams);
+  }
+);
+
+export const updateBalance = (
+  customer_account_number,
+  customer_phone_number,
+  customer_card_number,
+  customer_card_valid_date,
+  money_amount,
+  confirmation_code
+) => async (dispatch) => {
+  return dispatch(
+    updateUserBalance({
+      customer_account_number,
+      customer_phone_number,
+      customer_card_number,
+      customer_card_valid_date,
+      money_amount,
+      confirmation_code,
+    })
+  );
+};

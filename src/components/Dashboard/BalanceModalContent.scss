@@ -1,0 +1,41 @@
+@import "assets/style/variables";
+
+.balance-modal {
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .balance-fields {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    width: 100%;
+
+    .field-desc {
+      font-size: 18px;
+      font-weight: 400;
+      width: 100%;
+    }
+
+    .balance-input {
+      height: 35px;
+      margin-top: .5rem;
+      border-radius: 6px;
+      border: 1px solid $balance-modal-input-border-color;
+      padding-left: 1rem;
+      width: 100%;
+    }
+  }
+
+  .accept-balance {
+    height: 35px;
+    width: 200px;
+    border-radius: 7px;
+    margin-top: 2rem;
+    background-color: $auth-button-bgColor;
+    border: 1px solid $auth-button-bgColor;
+    color: $white-text-color;
+    font-size: 18px;
+  }
+}

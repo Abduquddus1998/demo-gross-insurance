@@ -1,8 +1,11 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Button, Modal } from "antd";
 
+import { onShowModal } from "store/actions/shares";
 import {
   getProfileInfo,
+  updateBalance,
   updatePasswords,
   updateProfile,
 } from "store/actions/dashboard";
@@ -10,10 +13,13 @@ import {
 import ProfilePhoto from "assets/images/user-profile.png";
 
 import "./Profile.scss";
+import BalanceModalContent from "./BalanceModalContent";
 
 const Profile = () => {
   const dispatch = useDispatch();
   const profile = useSelector((state) => state.dashboard.profile);
+  const showModal = useSelector((state) => state.shares.hideModal);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [surname, setSurname] = useState("");
@@ -22,7 +28,13 @@ const Profile = () => {
   const [currentPin, setCurrent] = useState("");
   const [pinError, setPinError] = useState("");
 
-  const accountNumber = localStorage.getItem("account_number");
+  const accountNumber = sessionStorage.getItem("account_number");
+
+  const bodyStyle = {
+    paddingTop: "1rem",
+    paddingLeft: "2rem",
+    paddingRight: "2rem",
+  };
 
   const handleOnChange = (setState) => (e) => setState(e.target.value);
 
@@ -46,6 +58,33 @@ const Profile = () => {
     dispatch(updatePasswords(accountNumber, currentPin, newPin));
   }, [dispatch, accountNumber, currentPin, newPin, confirmPin]);
 
+  const handleCancel = () => {
+    dispatch(onShowModal());
+  };
+
+  const handleOk = () => {
+    dispatch(onShowModal());
+  };
+
+  const updateUseBalance = (
+    cardNumber,
+    phoneNum,
+    expireDate,
+    amount,
+    confirm
+  ) => {
+    dispatch(
+      updateBalance(
+        accountNumber,
+        phoneNum,
+        cardNumber,
+        expireDate,
+        amount,
+        confirm
+      )
+    );
+  };
+
   return (
     <div className="user-profile">
       <div className="user-photo">
@@ -58,7 +97,12 @@ const Profile = () => {
         <div className="account-details">
           <h4>Balance:</h4> <div>{profile.customer_balance}</div>
         </div>
-        <button className="balance-button">Top up Balance </button>
+        <button
+          className="balance-button"
+          onClick={() => dispatch(onShowModal())}
+        >
+          Top up Balance
+        </button>
       </div>
 
       <div className="user-info">
@@ -119,6 +163,25 @@ const Profile = () => {
           </button>
         </div>
       </div>
+      <React.Fragment>
+        <Modal
+          visible={showModal}
+          onOk={handleOk}
+          onCancel={handleCancel}
+          bodyStyle={bodyStyle}
+          width="380px"
+          footer={[
+            <Button onClick={handleOk} key="back" type="primary" danger>
+              Cancel
+            </Button>,
+            <Button onClick={updateUseBalance} key="submit" type="primary">
+              Transfer
+            </Button>,
+          ]}
+        >
+          <BalanceModalContent updateBalance={updateUseBalance} />
+        </Modal>
+      </React.Fragment>
     </div>
   );
 };

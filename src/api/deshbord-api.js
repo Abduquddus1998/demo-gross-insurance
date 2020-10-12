@@ -22,6 +22,10 @@ export class Dashboard extends Base {
   async updatePassword(url: string, params): Promise<any> {
     return this.postRequest(url, params);
   }
+
+  async balanceUpdate(url: string, params): Promise<any> {
+    return this.postRequest(url, params);
+  }
 }
 
 const dashboardApi: Dashboard = new Dashboard();

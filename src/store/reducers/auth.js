@@ -33,7 +33,10 @@ export default createReducer(initialState, {
     return { ...state, authLoading: true };
   },
   [onUserLogin.fulfilled]: (state, action) => {
-    localStorage.setItem("account_number", action.payload.data.account_number);
+    sessionStorage.setItem(
+      "account_number",
+      action.payload.data.account_number
+    );
     return {
       ...state,
       authLoading: false,

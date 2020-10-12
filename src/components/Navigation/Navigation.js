@@ -13,7 +13,7 @@ const Navigation = () => {
   const [scrollStyle, setScrollStyle] = useState(false);
   const [toggleLang, setToggle] = useState(false);
 
-  const accountNumber = localStorage.getItem("account_number");
+  const accountNumber = sessionStorage.getItem("account_number");
 
   useEffect(() => {
     const handleScroll = () => {
