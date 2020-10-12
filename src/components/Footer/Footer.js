@@ -39,16 +39,16 @@ const Footer = () => {
             <div>
               <h5>Телефон:</h5>
             </div>
-            <div>+000 00 000 00 00</div>
-            <div>+000 00 000 00 00</div>
-            <div>+000 00 000 00 00</div>
+            <div>1166</div>
+            <div>+99871 241 65 78</div>
+            <div>+99897 785 36 54</div>
           </div>
           <div className="mails">
             <div>
               <h5>Email:</h5>
             </div>
-            <div>bbbbbbbb@mail.ru</div>
-            <div>cccccccc@mail.ru</div>
+            <div> info@gross.uz</div>
+            <div> info@gross.uz</div>
           </div>
         </div>
         <div className="social-networks">
@@ -68,7 +68,10 @@ const Footer = () => {
       </div>
       <div className="map-container">
         <FooterMap />
-        <div>Адрес: г. Ташкент, Яшнабадский р-н, ул. Паркентская 327а</div>
+        <div>
+          Address: O'zbekiston, 100000, Toshkent shahri, A.Temur ko'chasi,
+          1-tor, 6
+        </div>
       </div>
       <div className="review-form">
         <div>

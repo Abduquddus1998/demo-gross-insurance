@@ -35,10 +35,9 @@ const TeamMembers = () => {
               </div>
             </div>
             <div>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              aliquam dolore eos est harum, hic minus non numquam omnis ratione
-              sapiente sunt tempora tenetur unde veniam? Magnam numquam soluta
-              suscipit.
+              Have customers in Australia? Choice is a member-funded review
+              website based in Australia. Choice independently tests products
+              and services and provides performance reviews to their members.
             </div>
           </div>
         </div>
@@ -63,10 +62,10 @@ const TeamMembers = () => {
               </div>
             </div>
             <div>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              aliquam dolore eos est harum, hic minus non numquam omnis ratione
-              sapiente sunt tempora tenetur unde veniam? Magnam numquam soluta
-              suscipit.
+              In addition, though, they do allow members to rate and discuss
+              specific product brands and models with other Choice members. If
+              you have customers in Australia, we recommend encouraging those
+              who are on CHOICE to leave reviews there.
             </div>
           </div>
         </div>
@@ -91,10 +90,9 @@ const TeamMembers = () => {
               </div>
             </div>
             <div>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              aliquam dolore eos est harum, hic minus non numquam omnis ratione
-              sapiente sunt tempora tenetur unde veniam? Magnam numquam soluta
-              suscipit.
+              Trustpilot is a fast-growing, community-driven consumer review
+              platform based in Denmark, although they've expanded out of Europe
+              into 65 countries, including the U.S.
             </div>
           </div>
         </div>
@@ -119,10 +117,10 @@ const TeamMembers = () => {
               </div>
             </div>
             <div>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              aliquam dolore eos est harum, hic minus non numquam omnis ratione
-              sapiente sunt tempora tenetur unde veniam? Magnam numquam soluta
-              suscipit.
+              The platform for businesses helps companies from all over the
+              world proactively collect customer reviews. It's the customers who
+              write both product and seller reviews, keeping it third-party
+              verified.
             </div>
           </div>
         </div>
@@ -147,10 +145,10 @@ const TeamMembers = () => {
               </div>
             </div>
             <div>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              aliquam dolore eos est harum, hic minus non numquam omnis ratione
-              sapiente sunt tempora tenetur unde veniam? Magnam numquam soluta
-              suscipit.
+              While they have a basic version for free (this lets you create a
+              profile page and collect customer reviews), their paid versions
+              let you create customizable review invitations, share ratings and
+              reviews on social media,
             </div>
           </div>
         </div>
@@ -175,10 +173,11 @@ const TeamMembers = () => {
               </div>
             </div>
             <div>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              aliquam dolore eos est harum, hic minus non numquam omnis ratione
-              sapiente sunt tempora tenetur unde veniam? Magnam numquam soluta
-              suscipit.
+              Similar to TrustPilot, the Swedish-based TestFreaks helps
+              companies proactively collect customer reviews and write seller
+              reviews to complement them. Another cool addition? Their question
+              and answer feature, which lets prospective customers post
+              questions
             </div>
           </div>
         </div>
@@ -203,10 +202,10 @@ const TeamMembers = () => {
               </div>
             </div>
             <div>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              aliquam dolore eos est harum, hic minus non numquam omnis ratione
-              sapiente sunt tempora tenetur unde veniam? Magnam numquam soluta
-              suscipit.
+              Which? is an independent consumer review organization that tests
+              and reviews products and then writes about them. Unlike Angie's
+              List, it's the folks at Which? who write the reviews -- not the
+              customers.
             </div>
           </div>
         </div>
@@ -231,10 +230,10 @@ const TeamMembers = () => {
               </div>
             </div>
             <div>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              aliquam dolore eos est harum, hic minus non numquam omnis ratione
-              sapiente sunt tempora tenetur unde veniam? Magnam numquam soluta
-              suscipit.
+              While this leaves less room for you to influence whether your
+              products end up on their site, it's still worth knowing about and
+              checking in on this popular site, especially if you have customers
+              in the U.K
             </div>
           </div>
         </div>

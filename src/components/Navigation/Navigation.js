@@ -33,6 +33,11 @@ const Navigation = () => {
     };
   });
 
+  const clearSession = () => {
+    sessionStorage.clear();
+    dispatch(navigationRouter("/auth"));
+  };
+
   const checkUserAuth = () => {
     if (!accountNumber) {
       return dispatch(navigationRouter("/auth"));
@@ -61,25 +66,25 @@ const Navigation = () => {
             className="nav-item"
             onClick={() => dispatch(navigationRouter("/"))}
           >
-            Glavnaya
+            Main
           </div>
           <div
             className="nav-item"
             onClick={() => dispatch(navigationRouter("/about"))}
           >
-            О Нас
+            About Us
           </div>
           <div
             className="nav-item"
             onClick={() => dispatch(navigationRouter("/advertising"))}
           >
-            Obyevleniya
+            News
           </div>
           <div
             className="nav-item"
             onClick={() => dispatch(navigationRouter("/shop"))}
           >
-            Targovlya
+            Trading
           </div>
           <div className="nav-item" onClick={checkUserAuth}>
             Depository
@@ -90,7 +95,7 @@ const Navigation = () => {
               style={{ padding: "0 1rem" }}
               onClick={() => setToggle(!toggleLang)}
             >
-              RU
+              EN
             </div>
             {toggleLang && (
               <div className="lang-dropDown">
@@ -99,10 +104,7 @@ const Navigation = () => {
               </div>
             )}
           </div>
-          <div
-            className="nav-item"
-            onClick={() => dispatch(navigationRouter("/auth"))}
-          >
+          <div className="nav-item" onClick={clearSession}>
             Login
           </div>
         </div>

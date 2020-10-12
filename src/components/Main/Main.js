@@ -86,7 +86,7 @@ const Main = () => {
         <div className="main-sections">
           <div className="why-we">
             <div className="section-header">
-              <h3>Почему Мы</h3>
+              <h3> Why we?</h3>
             </div>
             <div className="content">
               <div className="content-items">
@@ -94,10 +94,8 @@ const Main = () => {
                   <Guarantee width="70px" height="80px" />
                 </div>
                 <div className="info">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                  cumque excepturi expedita facere fuga in magnam minus
-                  molestias neque nihil optio porro, quaerat quia, sit soluta
-                  tempore voluptatum! Dolore, qui?
+                  Look If you had One shot Or one opportunity To seize
+                  everything you ever wanted In one moment
                 </div>
               </div>
               <div className="content-items">
@@ -105,10 +103,9 @@ const Main = () => {
                   <EasyPayment width="70px" height="70px" />
                 </div>
                 <div className="info">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                  cumque excepturi expedita facere fuga in magnam minus
-                  molestias neque nihil optio porro, quaerat quia, sit soluta
-                  tempore voluptatum! Dolore, qui?
+                  Would you capture it Or just let it slip? Yo His palms are
+                  sweaty, knees weak, arms are heavy There's vomit on his
+                  sweater already, mom's spaghetti
                 </div>
               </div>
               <div className="content-items">
@@ -116,10 +113,10 @@ const Main = () => {
                   <Commission width="70px" height="70px" />
                 </div>
                 <div className="info">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                  cumque excepturi expedita facere fuga in magnam minus
-                  molestias neque nihil optio porro, quaerat quia, sit soluta
-                  tempore voluptatum! Dolore, qui?
+                  He's nervous, but on the surface he looks calm and ready To
+                  drop bombs, but he keeps on forgettin' What he wrote down, the
+                  whole crowd goes so loud He opens his mouth, but the words
+                  won't come out
                 </div>
               </div>
               <div className="content-items">
@@ -127,10 +124,9 @@ const Main = () => {
                   <StabilProfit width="70px" height="70px" />
                 </div>
                 <div className="info">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                  cumque excepturi expedita facere fuga in magnam minus
-                  molestias neque nihil optio porro, quaerat quia, sit soluta
-                  tempore voluptatum! Dolore, qui?
+                  He's chokin', how, everybody's jokin' now The clocks run out,
+                  times up, over, blaow Snap back to reality, oh there goes
+                  gravity Oh, there goes Rabbit, he choked
                 </div>
               </div>
             </div>
@@ -139,7 +135,7 @@ const Main = () => {
 
           <div className="get-started">
             <div className="title">
-              <h3>Начать легко</h3>
+              <h3>Easy Start</h3>
             </div>
             <div className="start-steps">
               <Steps size="40px">
@@ -168,30 +164,27 @@ const Main = () => {
             <div className="motivations">
               <div className="motive-content">
                 <img src={People} alt="people-icon" />
-                <div>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Accusamus assumenda aut commodi consequuntur cum dolore eaque,
-                </div>
+                <div>We have more than 1320 daily users in our site!</div>
               </div>
               <div className="motive-content">
                 <img src={Bank} alt="motive-content" />
                 <div>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Accusamus assumenda aut commodi consequuntur cum dolore eaque,
+                  The total amount of money Circulated in the platform consists
+                  of $1.2 billion
                 </div>
               </div>
               <div className="motive-content">
                 <img src={MoneyBag} alt="people-icon" />
                 <div>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Accusamus assumenda aut commodi consequuntur cum dolore eaque,
+                  The average profit output of an average user in the platform
+                  is $265/month
                 </div>
               </div>
               <div className="motive-content">
                 <img src={Clock} alt="people-icon" />
                 <div>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Accusamus assumenda aut commodi consequuntur cum dolore eaque,
+                  Average time to get the first profit from investments takes 3
+                  months
                 </div>
               </div>
             </div>

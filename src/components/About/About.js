@@ -28,54 +28,53 @@ const About = () => {
           <div className="about-team">
             <div>
               <div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Accusamus ad aliquid, at, delectus distinctio dolores error
-                eveniet laborum, minima modi odio repellat tenetur ut vero
-                voluptas voluptate voluptatum? Id, voluptate? Lorem ipsum dolor
-                sit amet, consectetur adipisicing elit. At consequatur deserunt
-                distinctio dolorum ducimus eos exercitationem illo illum impedit
-                ipsa nam nulla optio pariatur quia, quisquam quos sequi tempora
-                voluptatum!
+                You want to tell me what this is all about? As I walk through
+                the valley of the shadow of death I take a look at my life and
+                realize there's nothin' left Cause I've been blasting and
+                laughing so long, That even my mama thinks that my mind is gone
+                But I ain't never crossed a man that didn't deserve it Me be
+                treated like a punk you know that's unheard of You better watch
+                don't know
               </div>
               <div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
-                dignissimos iusto odit. Hic nulla, porro quae rem ut voluptates.
-                Aliquam beatae error excepturi minus obcaecati porro
-                repudiandae? Incidunt, ipsum obcaecati.
+                how you're talking and where you're walking Or you and your
+                homies might be lined in chalk I really hate to trip but I gotta
+                loc As they croak, I see myself in the pistol smoke, fool I'm
+                the kinda G the little homies wanna be like On my knees in the
               </div>
               <div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Blanditiis, dolorem dolores eligendi ex facilis illum in ipsa
-                iste itaque mollitia nihil numquam, optio quasi quisquam
-                ratione, reiciendis velit voluptatibus voluptatum? Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit. Animi dolorum ea
-                impedit, neque provident rerum sed suscipit voluptas! Ab enim
-                excepturi illo in laboriosam magni odio officiis placeat quo,
-                ullam.
+                night saying prayers in the streetlight We’ve been spending most
+                our lives living in the gangsta's paradise We’ve been spending
+                most our lives living in the gangsta's paradise We keep spending
+                most our lives living in the gangsta's paradise We keep spending
+                most our lives living in the gangsta's paradise Look at the
+                situation they got me facin' I can't live a normal life, I was
+                raised by the streets So I gotta be down with the hood team Too
               </div>
             </div>
             <div>
               <div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Accusamus ad aliquid, at, delectus distinctio dolores error
-                eveniet laborum, minima modi odio repellat tenetur ut vero
-                voluptas voluptate voluptatum? Id, voluptate?
+                much television watching got me chasing dreams I'm an educated
+                fool with money on my mind Got my 10 in my hand and a gleam in
+                my eye I'm a loc'd out gangsta set trippin' banger And my homies
+                is down so don't arouse my anger, fool Death ain't nothing but a
+                heartbeat away, I'm living life, do or die, what can I say I'm
+                23 now, but will I live to see 24 The way things are going I
               </div>
               <div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
-                dignissimos iusto odit. Hic nulla, porro quae rem ut voluptates.
-                Aliquam beatae error excepturi minus obcaecati porro
-                repudiandae? Incidunt, ipsum obcaecati. Lorem ipsum dolor sit
-                amet, consectetur adipisicing elit. Distinctio eveniet excepturi
-                id porro quo repellat veritatis! Dicta ducimus libero minima
-                quibusdam tenetur! Aperiam aspernatur at deleniti deserunt nemo
-                quisquam, voluptatum.
+                Hello, it's me I've thought about us for a long, long time Maybe
+                I think too much but something's wrong There's something here
+                that doesn't last too long Maybe I shouldn't think of you as
+                mine Seeing you, or seeing anything as much as I do you I take
+                for granted that you're always there I take for granted that you
+                just don't care Sometimes I can't help seeing all the way
               </div>
               <div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Blanditiis, dolorem dolores eligendi ex facilis illum in ipsa
-                iste itaque mollitia nihil numquam, optio quasi quisquam
-                ratione, reiciendis velit voluptatibus voluptatum?
+                through It's important to me That you know you are free 'Cause I
+                never want to make you change for me Think of me You know that
+                I'd be with you if I could I'll come around to see you once in a
+                while Or if I ever need a reason to smile And spend the night if
+                you think…
               </div>
             </div>
           </div>
@@ -99,10 +98,10 @@ const About = () => {
           </div>
           <div className="video-desc">
             <div>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
-              delectus dicta, distinctio dolor dolore ducimus et fuga fugit in
-              iure nesciunt nihil odit possimus recusandae similique tempora
-              unde ut voluptates?
+              A lot of their content is free, but customers can become members
+              for £10.75 per month to get access to a "Best Buys" and "Don't
+              Buy" list, the latest reviews of products from their test labs,
+              and access to their consumer legal advice service.
             </div>
           </div>
         </div>

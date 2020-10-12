@@ -23,7 +23,7 @@ const CardSlider = () => {
   return (
     <div className="users-slider">
       <div className="slider-title">
-        <h4>Oтзывы</h4>
+        <h4>User Reviews</h4>
       </div>
       <Carousel
         {...cardCarouselSetting}
