@@ -35,7 +35,10 @@ const AuthForm = () => {
   return (
     <div className="form-container">
       <div className="auth-form">
-        <div className="form-title">
+        <div
+          className="form-title"
+          onClick={() => dispatch(navigationRouter("/"))}
+        >
           <img src={LogoLight} alt="company-logo" />
           <div>Authorization</div>
         </div>
