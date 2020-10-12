@@ -46,6 +46,13 @@ const Navigation = () => {
     return dispatch(navigationRouter("/depository/currentshares"));
   };
 
+  const onAccessTrading = () => {
+    if (!accountNumber) {
+      return dispatch(navigationRouter("/auth"));
+    }
+    return dispatch(navigationRouter("/shop"));
+  };
+
   return (
     <div
       className={expand ? "navigation-expanded" : "navigation-outer"}
@@ -80,10 +87,7 @@ const Navigation = () => {
           >
             News
           </div>
-          <div
-            className="nav-item"
-            onClick={() => dispatch(navigationRouter("/shop"))}
-          >
+          <div className="nav-item" onClick={onAccessTrading}>
             Trading
           </div>
           <div className="nav-item" onClick={checkUserAuth}>
