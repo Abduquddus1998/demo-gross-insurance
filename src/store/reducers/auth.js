@@ -7,7 +7,6 @@ import type { Auth } from "./types/authTypes";
 const initialState: Auth = {
   authLoading: false,
   authError: "",
-  currentShares: [],
   accountNumber: "",
 };
 
@@ -34,11 +33,11 @@ export default createReducer(initialState, {
     return { ...state, authLoading: true };
   },
   [onUserLogin.fulfilled]: (state, action) => {
+    localStorage.setItem("account_number", action.payload.data.account_number);
     return {
       ...state,
       authLoading: false,
       authError: "",
-      currentShares: action.payload.data.bonds,
       accountNumber: action.payload.data.account_number,
     };
   },

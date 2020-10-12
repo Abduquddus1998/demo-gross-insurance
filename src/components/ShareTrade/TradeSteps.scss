@@ -29,11 +29,12 @@
       .share-params {
         display: flex;
         flex-direction: column;
+        width: 150%;
 
         .steps-details {
           display: flex;
           flex-direction: column;
-          width: 150%;
+          width: 100%;
           margin-top: 2rem;
           transition-duration: 2s;
 

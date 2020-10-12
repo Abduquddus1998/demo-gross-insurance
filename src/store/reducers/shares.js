@@ -7,6 +7,7 @@ import {
   getTradeShares,
   buyShareFirstStepInfo,
   buyShareSecondStep,
+  getCurrentShares,
 } from "store/actions/shares";
 
 const initialState = {
@@ -14,6 +15,7 @@ const initialState = {
   shareDetails: "",
   transferType: "",
   tradeShares: [],
+  currentShares: [],
   firstStepInfo: "",
   secondStepInfo: "",
   showNextStep: false,
@@ -47,5 +49,8 @@ export default createReducer(initialState, {
       secondStepInfo: action.payload.data,
       showNextStep: true,
     };
+  },
+  [getCurrentShares.fulfilled]: (state, action) => {
+    return { ...state, currentShares: action.payload.data.bonds };
   },
 });

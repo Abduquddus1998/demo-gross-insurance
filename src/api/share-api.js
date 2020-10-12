@@ -32,6 +32,18 @@ export class ShareApi extends Base {
   async shareBuySecondStep(url: string, params): Promise<any> {
     return this.postRequest(url, params);
   }
+
+  async ShareBuyThirdStep(url: string, params): Promise<any> {
+    return this.postRequest(url, params);
+  }
+
+  async shareTransfer(url: string, params: ShareInfoParams): Promise<any> {
+    return this.postRequest(url, params);
+  }
+
+  async getCurrantShares(url: string, params): Promise<any> {
+    return this.postRequest(url, params);
+  }
 }
 
 const shareApi: ShareApi = new ShareApi();

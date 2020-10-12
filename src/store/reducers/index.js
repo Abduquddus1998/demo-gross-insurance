@@ -4,6 +4,7 @@ import navigation from "./navigation";
 import shares from "./shares";
 import auth from "./auth";
 import main from "./main";
+import dashboard from "./dashboard";
 
 export const rootReducer = (history) =>
   combineReducers({
@@ -12,4 +13,5 @@ export const rootReducer = (history) =>
     auth,
     main,
     shares,
+    dashboard,
   });

@@ -84,3 +84,56 @@ export const shareBuySecondStep = (customer_account_number) => async (
 ) => {
   return await dispatch(buyShareSecondStep({ customer_account_number }));
 };
+
+export const shareTransfer = createAsyncThunk(
+  "share.transfer",
+  async (shareParams) => {
+    return await shareApi.shareTransfer("/transfer-approved", shareParams);
+  }
+);
+
+export const buyShare = (
+  buyer_account_number,
+  bond_series,
+  bond_number
+) => async (dispatch) => {
+  return await dispatch(
+    shareTransfer({ buyer_account_number, bond_series, bond_number })
+  );
+};
+
+export const buyShareThirdStep = createAsyncThunk(
+  "buy.share.third.step",
+  async (shareParams) => {
+    return await shareApi.ShareBuyThirdStep("/buy-sell-request", shareParams);
+  }
+);
+
+export const shareBuyThirdStep = (
+  requester_account_number,
+  bond_series,
+  bond_number,
+  money_amount,
+  transfer_type = 1
+) => async (dispatch) => {
+  return await dispatch(
+    buyShareThirdStep({
+      requester_account_number,
+      bond_series,
+      bond_number,
+      money_amount,
+      transfer_type,
+    })
+  );
+};
+
+export const getCurrentShares = createAsyncThunk(
+  "get.current.shares",
+  async (accountId) => {
+    return await shareApi.getCurrantShares("/my-bonds-dash", accountId);
+  }
+);
+
+export const currentShares = (customer_account_number) => async (dispatch) => {
+  return await dispatch(getCurrentShares({ customer_account_number }));
+};

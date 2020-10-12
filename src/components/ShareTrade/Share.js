@@ -20,13 +20,6 @@ type Bond = {
 type ShareProps = {
   bond: Array<Bond>,
   accNumber: string,
-  bond_end_date: string,
-  bond_life_time: number,
-  bond_start_date: string,
-  buy_date: string,
-  seller_name: string,
-  buy_price: number,
-  transfer_type: number,
 };
 
 const Share = ({ bond, accNumber }: ShareProps) => {

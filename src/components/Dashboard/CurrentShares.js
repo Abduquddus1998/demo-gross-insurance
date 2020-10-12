@@ -1,21 +1,26 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, Modal } from "antd";
 
 import Share from "components/ShareTrade/Share";
 import ModalContent from "components/ShareTrade/ModalContent";
 
-import { onShowModal, sellShareAction } from "store/actions/shares";
+import {
+  currentShares,
+  onShowModal,
+  sellShareAction,
+} from "store/actions/shares";
 
 import "./CurrentShares.scss";
 
 const CurrentShares = () => {
   const dispatch = useDispatch();
-  const currentBonds = useSelector((state) => state.auth.currentShares);
-  const accNumber = useSelector((state) => state.auth.accountNumber);
+  const currentBonds = useSelector((state) => state.shares.currentShares);
   const showModal = useSelector((state) => state.shares.hideModal);
   const [shareDetails, setDetails] = useState("");
   const [sharePrice, setPrice] = useState("");
+
+  const accNumber = localStorage.getItem("account_number");
 
   const bodyStyle = {
     paddingTop: "2rem",
@@ -30,6 +35,10 @@ const CurrentShares = () => {
   const handleOk = () => {
     dispatch(onShowModal());
   };
+
+  useEffect(() => {
+    dispatch(currentShares(accNumber));
+  }, [dispatch, accNumber]);
 
   const getSharePrice = (price, shareDetails) => {
     setPrice(price);
@@ -49,9 +58,10 @@ const CurrentShares = () => {
 
   return (
     <div className="bond-container">
-      {currentBonds.map((bonds, index) => (
-        <Share key={index} bond={bonds} accNumber={accNumber} />
-      ))}
+      {currentBonds &&
+        currentBonds.map((bonds, index) => (
+          <Share key={index} bond={bonds} accNumber={accNumber} />
+        ))}
       <div className="modal-block">
         <React.Fragment>
           <Modal
